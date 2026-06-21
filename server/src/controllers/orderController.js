@@ -1,26 +1,34 @@
-const Razorpay  = require('razorpay');
 const crypto    = require('crypto');
 const supabase  = require('../config/supabase');
 const { clearCart } = require('./cartController');
 const { sendEmail, emailTemplates } = require('../utils/sendEmail');
 const { success, error } = require('../utils/apiResponse');
 
-const razorpay = new Razorpay({
-  key_id:     process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+// Initialize Razorpay lazily — only when keys are available
+function getRazorpay() {
+  if (!process.env.RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID.includes('xxxx')) {
+    return null;
+  }
+  const Razorpay = require('razorpay');
+  return new Razorpay({
+    key_id:     process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
+  });
+}
 
 // ── CREATE RAZORPAY ORDER ─────────────────────────────
 exports.createRazorpayOrder = async (req, res) => {
   try {
-    const { amount } = req.body; // amount in paise
-
+    const razorpay = getRazorpay();
+    if (!razorpay) {
+      return error(res, 'Payment gateway not configured. Please contact support or order via WhatsApp.', 503);
+    }
+    const { amount } = req.body;
     const options = {
       amount: Math.round(amount * 100),
       currency: 'INR',
       receipt: `yara_${Date.now()}`,
     };
-
     const rzpOrder = await razorpay.orders.create(options);
     success(res, {
       razorpayOrderId: rzpOrder.id,
