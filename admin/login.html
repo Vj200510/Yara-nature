@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Admin Login – Yara Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#1a2e18,#2d4a2b);min-height:100vh;display:flex;align-items:center;justify-content:center;}
+    .login-card{background:#fff;border-radius:16px;padding:44px 40px;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+    .login-logo{text-align:center;margin-bottom:28px;}
+    .login-logo h1{font-size:1.8rem;font-weight:800;color:#2d4a2b;}
+    .login-logo p{font-size:0.8rem;color:#c9a227;font-style:italic;}
+    .login-title{font-size:1.1rem;font-weight:700;color:#1c1c1c;margin-bottom:24px;text-align:center;}
+    .form-group{margin-bottom:16px;}
+    .form-group label{display:block;font-size:0.82rem;font-weight:600;color:#333;margin-bottom:6px;}
+    .form-group input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.88rem;outline:none;transition:border-color .2s;}
+    .form-group input:focus{border-color:#2d4a2b;}
+    .btn-login{width:100%;padding:12px;background:#2d4a2b;color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;margin-top:8px;transition:background .2s;}
+    .btn-login:hover{background:#3a6135;}
+    .btn-login:disabled{background:#aaa;cursor:not-allowed;}
+    .error-msg{color:#e63f2e;font-size:0.82rem;margin-top:12px;text-align:center;}
+    .back-link{display:block;text-align:center;margin-top:18px;font-size:0.8rem;color:#888;text-decoration:none;}
+    .back-link:hover{color:#2d4a2b;}
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <div class="login-logo">
+      <h1>YARA NATURE</h1>
+      <p>Pure Wellness from Nature</p>
+    </div>
+    <p class="login-title">🔐 Admin Login</p>
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="admin@yaranature.com" required/>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required/>
+      </div>
+      <button type="submit" class="btn-login" id="loginBtn">Login to Dashboard</button>
+      <div class="error-msg" id="errMsg"></div>
+    </form>
+    <a href="../index.html" class="back-link">← Back to Website</a>
+  </div>
+  <script>
+    const API = 'http://localhost:5001/api';
+    // Redirect if already logged in as admin
+    const token = localStorage.getItem('yn_admin_token');
+    if (token) window.location.href = 'index.html';
+
+    document.getElementById('adminLoginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      const err = document.getElementById('errMsg');
+      btn.disabled = true;
+      btn.textContent = 'Logging in...';
+      err.textContent = '';
+      try {
+        const res = await fetch(`${API}/auth/login`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+          })
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.message);
+        if (data.user.role !== 'admin') throw new Error('Access denied. Admins only.');
+        localStorage.setItem('yn_admin_token', data.token);
+        localStorage.setItem('yn_admin_user', JSON.stringify(data.user));
+        window.location.href = 'index.html';
+      } catch (e) {
+        err.textContent = e.message;
+        btn.disabled = false;
+        btn.textContent = 'Login to Dashboard';
+      }
+    });
+  </script>
+</body>
+</html>

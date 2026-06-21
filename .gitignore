@@ -1,0 +1,22 @@
+# ── Environment files (NEVER commit these) ──
+server/.env
+.env
+.env.local
+.env.production
+
+# ── Node modules ──
+server/node_modules/
+node_modules/
+
+# ── Mac system files ──
+.DS_Store
+**/.DS_Store
+
+# ── Logs ──
+*.log
+npm-debug.log*
+
+# ── Build outputs ──
+dist/
+build/
+coverage/
