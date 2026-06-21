@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════
 //  YARA NATURE — Admin Dashboard JS
 // ═══════════════════════════════════════════════════
-const API = 'http://localhost:5001/api';
+const API = 'https://yara-nature.onrender.com/api';
 let adminToken = localStorage.getItem('yn_admin_token');
 let adminUser  = JSON.parse(localStorage.getItem('yn_admin_user') || '{}');
 let currentPage = 'dashboard';

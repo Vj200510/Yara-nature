@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════
 //  YARA NATURE — Complete Frontend API & Button Wiring
 // ═══════════════════════════════════════════════════════
-const API_BASE = 'http://localhost:5001/api';
+const API_BASE = 'https://yara-nature.onrender.com/api';
 
 // ── Core fetch ────────────────────────────────────────
 async function api(path, method = 'GET', body = null) {
