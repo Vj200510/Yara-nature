@@ -235,3 +235,54 @@ ON CONFLICT DO NOTHING;
 INSERT INTO coupons (code, discount_type, discount_value, min_order_value, usage_limit)
 VALUES ('YARA10', 'percent', 10, 299, 100)
 ON CONFLICT (code) DO NOTHING;
+
+-- ═══════════════════════════════════════════════════════
+--  MISSING RPC: decrement_stock
+--  Run this in Supabase SQL Editor if not already added
+-- ═══════════════════════════════════════════════════════
+CREATE OR REPLACE FUNCTION decrement_stock(product_id UUID, qty INTEGER)
+RETURNS VOID
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+BEGIN
+  UPDATE products
+  SET stock = GREATEST(0, stock - qty),
+      sold  = sold + qty
+  WHERE id = product_id;
+END;
+$$;
+
+-- Grant execute to service role
+GRANT EXECUTE ON FUNCTION decrement_stock(UUID, INTEGER) TO service_role;
+
+-- ═══════════════════════════════════════════════════════
+--  WISHLIST TABLE (missing from original schema)
+-- ═══════════════════════════════════════════════════════
+CREATE TABLE IF NOT EXISTS wishlist (
+  id         UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id    UUID REFERENCES users(id) ON DELETE CASCADE,
+  product_id UUID REFERENCES products(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(user_id, product_id)
+);
+
+-- ═══════════════════════════════════════════════════════
+--  ADDITIONAL SEED: More reviews for social proof
+-- ═══════════════════════════════════════════════════════
+-- Add welcome coupon
+INSERT INTO coupons (code, discount_type, discount_value, min_order_value, usage_limit)
+VALUES ('YARA15', 'percent', 15, 299, 50)
+ON CONFLICT (code) DO NOTHING;
+
+INSERT INTO coupons (code, discount_type, discount_value, min_order_value, usage_limit)
+VALUES ('FIRST10', 'flat', 10, 299, 200)
+ON CONFLICT (code) DO NOTHING;
+
+-- Additional FAQs
+INSERT INTO faqs (question, answer, category, sort_order) VALUES
+('What is the shelf life of the product?','Yara Nature Hair Oil has a shelf life of 24 months from the manufacturing date. Store in a cool, dry place away from direct sunlight.','Product',5),
+('Is it suitable for oily scalp?','Yes! Our formula is balanced for all scalp types. For oily scalps, apply only on the scalp and roots, and wash off within 1-2 hours.','Usage',6),
+('Do you offer Cash on Delivery (COD)?','Yes, we offer COD across India. COD orders have an additional charge of ₹49. Online payment is preferred for faster delivery.','Orders',7),
+('How do I track my order?','You can track your order on our Track Order page or via the link in your confirmation email. Orders are usually delivered within 3-7 business days.','Orders',8)
+ON CONFLICT DO NOTHING;

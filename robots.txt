@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard.html
+Disallow: /checkout.html
+Disallow: /order-success.html
+
+Sitemap: https://yara-nature.onrender.com/sitemap.xml

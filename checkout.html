@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Checkout – Yara Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="premium.css"/>
+  <style>
+    .checkout-wrap{max-width:1100px;margin:0 auto;padding:40px 24px;display:grid;grid-template-columns:1fr 380px;gap:32px}
+    .co-section{background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.07);margin-bottom:20px}
+    .co-section h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#2d4a2b;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-group{margin-bottom:14px}
+    .form-group label{display:block;font-size:0.8rem;font-weight:600;color:#333;margin-bottom:5px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 13px;border:1.5px solid #ddd;border-radius:8px;font-family:Inter,sans-serif;font-size:0.88rem;outline:none;transition:border-color .2s}
+    .form-group input:focus,.form-group select:focus{border-color:#2d4a2b}
+    .payment-opts{display:flex;flex-direction:column;gap:10px}
+    .pay-opt{border:1.5px solid #ddd;border-radius:8px;padding:13px 16px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color .2s}
+    .pay-opt:hover,.pay-opt.active{border-color:#2d4a2b;background:rgba(45,74,43,0.04)}
+    .pay-opt input[type=radio]{accent-color:#2d4a2b;width:16px;height:16px;flex-shrink:0}
+    .pay-opt-label{font-weight:600;font-size:0.88rem}
+    .pay-opt-sub{font-size:0.74rem;color:#888}
+    .order-summary{position:sticky;top:90px}
+    .os-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f5f0e6}
+    .os-img{width:60px;height:72px;object-fit:contain;border-radius:8px;flex-shrink:0;background:#f9f6f0;padding:4px}
+    .os-name{font-weight:600;font-size:0.86rem;margin-bottom:3px}
+    .os-price{font-weight:700;color:#2d4a2b}
+    .os-totals{padding:14px 0}
+    .os-row{display:flex;justify-content:space-between;font-size:0.84rem;margin-bottom:8px}
+    .os-row.total{font-weight:800;font-size:1rem;border-top:1px solid #f0f0f0;padding-top:10px;margin-top:6px}
+    .coupon-row{display:flex;gap:8px;margin:12px 0}
+    .coupon-row input{flex:1;padding:9px 12px;border:1.5px solid #ddd;border-radius:6px;font-size:0.85rem;outline:none}
+    .coupon-row button{padding:9px 16px;background:#2d4a2b;color:#fff;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:0.82rem}
+    @media(max-width:800px){.checkout-wrap{grid-template-columns:1fr}.order-summary{position:static}}
+  </style>
+</head>
+<body>
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/product-bottle.jpeg" alt="Yara Nature"/>
+      <div class="logo-text-wrap"><span class="logo-yn">YARA NATURE</span><span class="logo-tag">Secure Checkout</span></div>
+    </a>
+    <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:#888">
+      <svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span style="color:#2d4a2b;font-weight:600">100% Secure & Encrypted</span>
+    </div>
+  </div>
+</header>
+
+<div style="background:var(--cream);min-height:calc(100vh - 70px);padding-top:20px">
+  <div class="checkout-wrap">
+    <!-- Left: Form -->
+    <div>
+      <div class="co-section">
+        <h3>📍 Delivery Address</h3>
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input id="co-fname" type="text" placeholder="Neha"/></div>
+          <div class="form-group"><label>Last Name</label><input id="co-lname" type="text" placeholder="Sharma"/></div>
+        </div>
+        <div class="form-group"><label>Phone Number *</label><input id="co-phone" type="tel" placeholder="+91 9999 999999"/></div>
+        <div class="form-group"><label>Email *</label><input id="co-email" type="email" placeholder="your@email.com"/></div>
+        <div class="form-group"><label>Address Line 1 *</label><input id="co-addr1" type="text" placeholder="House/Flat No., Street Name"/></div>
+        <div class="form-group"><label>Address Line 2</label><input id="co-addr2" type="text" placeholder="Landmark, Area"/></div>
+        <div class="form-row">
+          <div class="form-group"><label>City *</label><input id="co-city" type="text" placeholder="Mumbai"/></div>
+          <div class="form-group"><label>State *</label>
+            <select id="co-state">
+              <option value="">Select State</option>
+              <option>Andhra Pradesh</option><option>Delhi</option><option>Gujarat</option>
+              <option>Karnataka</option><option>Maharashtra</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option>
+              <option>Uttar Pradesh</option><option>West Bengal</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label>PIN Code *</label><input id="co-pin" type="text" placeholder="400001" maxlength="6"/></div>
+      </div>
+
+      <div class="co-section">
+        <h3>💳 Payment Method</h3>
+        <div class="payment-opts">
+          <label class="pay-opt active" onclick="selectPayment('razorpay',this)">
+            <input type="radio" name="payment" value="razorpay" checked/>
+            <div><div class="pay-opt-label">💳 Online Payment (Recommended)</div><div class="pay-opt-sub">UPI, Cards, Net Banking, Wallets via Razorpay</div></div>
+          </label>
+          <label class="pay-opt" onclick="selectPayment('cod',this)">
+            <input type="radio" name="payment" value="cod"/>
+            <div><div class="pay-opt-label">💵 Cash on Delivery</div><div class="pay-opt-sub">Pay when your order arrives. ₹49 extra COD charge.</div></div>
+          </label>
+        </div>
+      </div>
+
+      <button id="placeOrderBtn" onclick="placeOrder()"
+        style="width:100%;padding:16px;background:#2d4a2b;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(45,74,43,0.3)">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Place Order Securely
+      </button>
+      <div style="text-align:center;margin-top:10px;font-size:0.75rem;color:#888">🔒 Your payment info is encrypted and secure</div>
+    </div>
+
+    <!-- Right: Order Summary -->
+    <div class="order-summary">
+      <div class="co-section">
+        <h3>🧾 Order Summary</h3>
+        <div id="os-items"></div>
+        <div class="coupon-row">
+          <input id="co-coupon" placeholder="Coupon code" style="text-transform:uppercase"/>
+          <button onclick="applyCoupon()">Apply</button>
+        </div>
+        <div id="co-coupon-msg" style="font-size:0.78rem;color:#2d4a2b;margin-bottom:6px"></div>
+        <div class="os-totals" id="os-totals">
+          <div class="os-row"><span>Subtotal</span><span id="os-subtotal">—</span></div>
+          <div class="os-row"><span>Shipping</span><span id="os-shipping">—</span></div>
+          <div class="os-row" id="os-discount-row" style="display:none;color:#2d4a2b"><span>Discount</span><span id="os-discount">—</span></div>
+          <div class="os-row total"><span>Total</span><span id="os-total" style="color:#2d4a2b">—</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:0.75rem;color:#888">
+          <div>✅ 30-Day Money Back Guarantee</div>
+          <div>🚚 Free shipping on orders ₹499+</div>
+          <div>🔒 Secure payment via Razorpay</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script src="premium.js"></script>
+<script>
+const API = 'https://yara-nature.onrender.com/api';
+let cartData = null;
+let selectedPayment = 'razorpay';
+let appliedDiscount = 0;
+let appliedCoupon = '';
+
+function selectPayment(method, el){
+  selectedPayment = method;
+  document.querySelectorAll('.pay-opt').forEach(o=>o.classList.remove('active'));
+  el.classList.add('active');
+}
+
+async function loadCheckoutCart(){
+  if(!Auth.isLoggedIn()){ window.location.href='index.html'; return; }
+  try{
+    const d = await apiFetch('/cart');
+    cartData = d.cart;
+    const items = cartData?.items||[];
+    document.getElementById('os-items').innerHTML = items.map(i=>`
+      <div class="os-item">
+        <img class="os-img" src="${i.product?.product_images?.[0]?.url||'images/product-bottle.jpeg'}" alt="${i.product?.name}"/>
+        <div style="flex:1"><div class="os-name">${i.product?.name}</div><div style="font-size:0.76rem;color:#888">Qty: ${i.quantity}</div></div>
+        <div class="os-price">₹${(i.product?.price*i.quantity).toFixed(0)}</div>
+      </div>`).join('');
+    updateTotals();
+    // Pre-fill email
+    const user=Auth.getUser();
+    if(user) document.getElementById('co-email').value=user.email||'';
+  }catch(e){ toast('Error loading cart: '+e.message,'error'); }
+}
+
+function updateTotals(){
+  if(!cartData) return;
+  const codFee = selectedPayment==='cod'?49:0;
+  document.getElementById('os-subtotal').textContent='₹'+cartData.itemsPrice?.toFixed(0);
+  document.getElementById('os-shipping').textContent = cartData.shippingPrice===0?'FREE':'₹'+cartData.shippingPrice;
+  const total = (cartData.totalPrice||0) + codFee - appliedDiscount;
+  if(appliedDiscount>0){
+    document.getElementById('os-discount-row').style.display='flex';
+    document.getElementById('os-discount').textContent='-₹'+appliedDiscount.toFixed(0);
+  }
+  document.getElementById('os-total').textContent='₹'+(total>0?total:0).toFixed(0);
+}
+
+async function applyCoupon(){
+  const code=document.getElementById('co-coupon').value.trim().toUpperCase();
+  if(!code){ toast('Enter a coupon code','error'); return; }
+  try{
+    const d=await apiFetch('/coupons/apply','POST',{code, orderValue:cartData?.itemsPrice||0});
+    appliedDiscount=d.discount;
+    appliedCoupon=code;
+    document.getElementById('co-coupon-msg').textContent=`✅ Coupon applied! You save ₹${d.discount}`;
+    updateTotals();
+  }catch(e){ document.getElementById('co-coupon-msg').innerHTML=`<span style="color:#e63f2e">❌ ${e.message}</span>`; }
+}
+
+async function placeOrder(){
+  const fname=document.getElementById('co-fname').value.trim();
+  const phone=document.getElementById('co-phone').value.trim();
+  const addr1=document.getElementById('co-addr1').value.trim();
+  const city=document.getElementById('co-city').value.trim();
+  const state=document.getElementById('co-state').value;
+  const pin=document.getElementById('co-pin').value.trim();
+  if(!fname||!phone||!addr1||!city||!state||!pin){toast('Please fill all required fields','error');return;}
+
+  const btn=document.getElementById('placeOrderBtn');
+  btn.textContent='Processing...'; btn.disabled=true;
+
+  const codFee=selectedPayment==='cod'?49:0;
+  const totalPrice=parseFloat(((cartData?.totalPrice||0)+codFee-appliedDiscount).toFixed(2));
+  const shippingAddr={
+    name:fname+' '+(document.getElementById('co-lname').value||''),
+    phone, addressLine1:addr1,
+    addressLine2:document.getElementById('co-addr2').value||'',
+    city, state, pincode:pin
+  };
+  const orderItems=(cartData?.items||[]).map(i=>({
+    product:i.product?.id||i.product_id,
+    name:i.product?.name,
+    price:i.product?.price,
+    quantity:i.quantity,
+    image:i.product?.product_images?.[0]?.url||''
+  }));
+
+  if(selectedPayment==='cod'){
+    try{
+      const order=await apiFetch('/orders','POST',{
+        orderItems, shippingAddress:shippingAddr,
+        razorpay_order_id:'COD_'+Date.now(),
+        razorpay_payment_id:'COD_'+Date.now(),
+        razorpay_signature:'cod',
+        couponCode:appliedCoupon,
+        itemsPrice:cartData?.itemsPrice, taxPrice:cartData?.taxPrice||0,
+        shippingPrice:(cartData?.shippingPrice||0)+codFee,
+        discount:appliedDiscount, totalPrice
+      });
+      window.location.href=`order-success.html?id=${order.order.id}`;
+    }catch(e){ toast('❌ '+e.message,'error'); btn.textContent='Place Order Securely'; btn.disabled=false; }
+    return;
+  }
+
+  // Razorpay
+  try{
+    const rzp=await apiFetch('/orders/razorpay','POST',{amount:totalPrice});
+    const options={
+      key:rzp.keyId, amount:rzp.amount, currency:'INR',
+      name:'Yara Nature', description:'Herbal Hair Growth Oil',
+      image:'images/product-bottle.jpeg',
+      order_id:rzp.razorpayOrderId,
+      handler:async(response)=>{
+        try{
+          const order=await apiFetch('/orders','POST',{
+            orderItems, shippingAddress:shippingAddr,
+            razorpay_order_id:response.razorpay_order_id,
+            razorpay_payment_id:response.razorpay_payment_id,
+            razorpay_signature:response.razorpay_signature,
+            couponCode:appliedCoupon,
+            itemsPrice:cartData?.itemsPrice, taxPrice:cartData?.taxPrice||0,
+            shippingPrice:cartData?.shippingPrice||0,
+            discount:appliedDiscount, totalPrice
+          });
+          window.location.href=`order-success.html?id=${order.order.id}`;
+        }catch(e){ toast('❌ Order failed: '+e.message,'error'); }
+      },
+      prefill:{name:shippingAddr.name, email:document.getElementById('co-email').value, contact:phone},
+      theme:{color:'#2d4a2b'}
+    };
+    const rzpInst=new window.Razorpay(options);
+    rzpInst.open();
+    btn.textContent='Place Order Securely'; btn.disabled=false;
+  }catch(e){
+    toast('Payment not available. Please use COD.','error');
+    btn.textContent='Place Order Securely'; btn.disabled=false;
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const user=Auth.getUser();
+  if(!user){ showAuthModal(); return; }
+  loadCheckoutCart();
+  const saved=localStorage.getItem('yn_coupon');
+  if(saved){ document.getElementById('co-coupon').value=saved; applyCoupon(); localStorage.removeItem('yn_coupon'); }
+  document.querySelectorAll('.pay-opt').forEach(opt=>{
+    opt.addEventListener('change',()=>{ updateTotals(); });
+  });
+});
+</script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

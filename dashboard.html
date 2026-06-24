@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>My Account – Yara Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="premium.css"/>
+  <style>
+    .dash-layout{max-width:1100px;margin:0 auto;padding:40px 24px;display:grid;grid-template-columns:240px 1fr;gap:28px}
+    .dash-sidebar{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.07);height:fit-content;position:sticky;top:90px}
+    .dash-avatar{width:72px;height:72px;border-radius:50%;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;margin:0 auto 12px}
+    .dash-user-name{text-align:center;font-weight:700;color:var(--g);font-size:1rem;margin-bottom:2px}
+    .dash-user-email{text-align:center;font-size:0.75rem;color:#888;margin-bottom:18px}
+    .dash-nav-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:8px;cursor:pointer;font-size:0.86rem;font-weight:500;color:var(--txt);transition:all .2s;border:none;background:none;width:100%;text-align:left}
+    .dash-nav-item:hover,.dash-nav-item.active{background:rgba(45,74,43,0.08);color:var(--g);font-weight:600}
+    .dash-main{display:flex;flex-direction:column;gap:20px}
+    .dash-card{background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
+    .dash-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--g);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
+    .order-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #f8f8f8}
+    .order-row:last-child{border-bottom:none}
+    .order-status{padding:3px 10px;border-radius:12px;font-size:0.72rem;font-weight:700;text-transform:capitalize}
+    .status-processing,.status-confirmed{background:#dbeafe;color:#1e40af}
+    .status-shipped{background:#ede9fe;color:#5b21b6}
+    .status-delivered{background:#dcfce7;color:#166534}
+    .status-cancelled{background:#fee2e2;color:#991b1b}
+    .tab-content{display:none}.tab-content.active{display:block}
+    @media(max-width:768px){.dash-layout{grid-template-columns:1fr}.dash-sidebar{position:static}}
+  </style>
+</head>
+<body style="background:var(--cream)">
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="images/product-bottle.jpeg" alt="Yara Nature"/><div class="logo-text-wrap"><span class="logo-yn">YARA NATURE</span><span class="logo-tag">Pure Wellness from Nature</span></div></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn cart-btn" id="cartBtn"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="dash-layout">
+  <div class="dash-sidebar">
+    <div class="dash-avatar" id="dashAvatar">U</div>
+    <div class="dash-user-name" id="dashName">Loading...</div>
+    <div class="dash-user-email" id="dashEmail">...</div>
+    <button class="dash-nav-item active" onclick="showTab('orders',this)">📦 My Orders</button>
+    <button class="dash-nav-item" onclick="showTab('profile',this)">👤 My Profile</button>
+    <button class="dash-nav-item" onclick="showTab('addresses',this)">📍 Addresses</button>
+    <button class="dash-nav-item" onclick="showTab('wishlist',this)">❤️ Wishlist</button>
+    <hr style="margin:12px 0;border:none;border-top:1px solid #f0f0f0"/>
+    <button class="dash-nav-item" onclick="doLogout()" style="color:#e63f2e">🚪 Logout</button>
+  </div>
+
+  <div class="dash-main">
+    <!-- Orders -->
+    <div id="tab-orders" class="tab-content active">
+      <div class="dash-card">
+        <h3>My Orders</h3>
+        <div id="orders-list"><div style="text-align:center;color:#aaa;padding:30px">Loading orders...</div></div>
+      </div>
+    </div>
+    <!-- Profile -->
+    <div id="tab-profile" class="tab-content">
+      <div class="dash-card">
+        <h3>My Profile</h3>
+        <div style="max-width:420px">
+          <div class="form-group" style="margin-bottom:14px"><label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:5px">Full Name</label><input id="prof-name" type="text" style="width:100%;padding:11px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:0.88rem;outline:none"/></div>
+          <div class="form-group" style="margin-bottom:14px"><label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:5px">Email</label><input id="prof-email" type="email" disabled style="width:100%;padding:11px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:0.88rem;background:#f8f9fa;color:#888"/></div>
+          <div class="form-group" style="margin-bottom:20px"><label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:5px">Phone</label><input id="prof-phone" type="tel" style="width:100%;padding:11px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:0.88rem;outline:none"/></div>
+          <button onclick="saveProfile()" class="btn-hero-primary">Save Changes</button>
+        </div>
+      </div>
+    </div>
+    <!-- Addresses -->
+    <div id="tab-addresses" class="tab-content">
+      <div class="dash-card">
+        <h3>Saved Addresses</h3>
+        <div id="addr-list"><div style="text-align:center;color:#aaa;padding:30px">No addresses saved yet</div></div>
+      </div>
+    </div>
+    <!-- Wishlist -->
+    <div id="tab-wishlist" class="tab-content">
+      <div class="dash-card">
+        <h3>My Wishlist</h3>
+        <div style="text-align:center;padding:40px">
+          <div style="font-size:3rem;margin-bottom:12px">❤️</div>
+          <p style="color:#888;margin-bottom:16px">Your wishlist is empty</p>
+          <a href="index.html" class="btn-hero-primary" style="display:inline-flex;text-decoration:none">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script src="premium.js"></script>
+<script>
+function showTab(name, btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.dash-nav-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+}
+
+async function loadDashboard(){
+  if(!Auth.isLoggedIn()){ window.location.href='index.html'; return; }
+  const user = Auth.getUser();
+  if(user){
+    document.getElementById('dashAvatar').textContent = user.name[0].toUpperCase();
+    document.getElementById('dashName').textContent = user.name;
+    document.getElementById('dashEmail').textContent = user.email;
+    document.getElementById('prof-name').value = user.name;
+    document.getElementById('prof-email').value = user.email;
+    document.getElementById('prof-phone').value = user.phone||'';
+    updateNavUI(user);
+    loadCartCount();
+  }
+  loadOrders();
+  // Check hash
+  if(window.location.hash==='#orders') showTab('orders');
+}
+
+async function loadOrders(){
+  try{
+    const {orders} = await apiFetch('/orders/my');
+    const el = document.getElementById('orders-list');
+    if(!orders?.length){
+      el.innerHTML='<div style="text-align:center;padding:40px"><div style="font-size:3rem;margin-bottom:12px">📦</div><p style="color:#888;margin-bottom:16px">No orders yet</p><a href="index.html" class="btn-hero-primary" style="display:inline-flex;text-decoration:none">Shop Now</a></div>';
+      return;
+    }
+    el.innerHTML = orders.map(o=>`
+      <div class="order-row">
+        <img src="images/product-bottle.jpeg" style="width:56px;height:68px;object-fit:contain;border-radius:8px;flex-shrink:0;background:#f5f0e6;padding:3px"/>
+        <div style="flex:1">
+          <div style="font-weight:700;font-size:0.88rem;margin-bottom:3px">#${o.id.slice(0,8).toUpperCase()}</div>
+          <div style="font-size:0.78rem;color:#888">${new Date(o.created_at).toLocaleDateString('en-IN')}</div>
+          <div style="font-size:0.78rem;color:#888;margin-top:2px">${(o.order_items||[]).map(i=>i.name).join(', ')}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:800;color:#2d4a2b;margin-bottom:4px">₹${parseFloat(o.total_price).toLocaleString('en-IN')}</div>
+          <span class="order-status status-${o.order_status}">${o.order_status}</span>
+        </div>
+      </div>`).join('');
+  }catch(e){ document.getElementById('orders-list').innerHTML='<div style="color:#e63f2e;padding:20px">'+e.message+'</div>'; }
+}
+
+async function saveProfile(){
+  try{
+    await apiFetch('/auth/me','PUT',{
+      name: document.getElementById('prof-name').value,
+      phone: document.getElementById('prof-phone').value
+    });
+    toast('✅ Profile updated successfully!');
+  }catch(e){ toast('❌ '+e.message,'error'); }
+}
+
+document.addEventListener('DOMContentLoaded', loadDashboard);
+</script>
+</body>
+</html>

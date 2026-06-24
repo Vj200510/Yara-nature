@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Order Confirmed – Yara Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="premium.css"/>
+</head>
+<body style="background:var(--cream);min-height:100vh">
+<header class="navbar"><div class="nav-container">
+  <a href="index.html" class="nav-logo"><img src="images/product-bottle.jpeg" alt="Yara Nature"/><div class="logo-text-wrap"><span class="logo-yn">YARA NATURE</span><span class="logo-tag">Pure Wellness from Nature</span></div></a>
+</div></header>
+
+<div style="max-width:600px;margin:60px auto;padding:0 24px;text-align:center">
+  <div style="background:#fff;border-radius:20px;padding:48px 36px;box-shadow:0 8px 40px rgba(0,0,0,0.1)">
+    <div style="font-size:4rem;margin-bottom:16px">🎉</div>
+    <h1 style="font-family:'Playfair Display',serif;color:#2d4a2b;font-size:1.8rem;margin-bottom:10px">Order Confirmed!</h1>
+    <p style="color:#555;margin-bottom:6px">Thank you for choosing Yara Nature</p>
+    <p style="font-size:0.82rem;color:#888;margin-bottom:28px">A confirmation email has been sent to your inbox</p>
+    <div id="order-details" style="background:#f5f0e6;border-radius:12px;padding:20px;margin-bottom:24px;text-align:left">
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;margin-bottom:8px">
+        <span style="color:#888">Order ID</span>
+        <span id="ord-id" style="font-weight:700;color:#2d4a2b">Loading...</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;margin-bottom:8px">
+        <span style="color:#888">Status</span>
+        <span style="font-weight:700;color:#2d4a2b">✅ Confirmed</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem">
+        <span style="color:#888">Estimated Delivery</span>
+        <span style="font-weight:700">3–7 Business Days</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="dashboard.html#orders" class="btn-hero-primary" style="display:flex;justify-content:center;text-decoration:none">📦 Track My Order</a>
+      <a href="index.html" class="btn-outline-green" style="display:flex;justify-content:center;text-decoration:none">🌿 Continue Shopping</a>
+      <a href="https://wa.me/919999999999?text=Hi! I just placed an order. My order ID is" target="_blank" class="btn-whatsapp-order" style="display:flex;justify-content:center;text-decoration:none">💬 Contact Support</a>
+    </div>
+  </div>
+  <div style="margin-top:24px;padding:20px;background:#fff;border-radius:12px;font-size:0.84rem;color:#555;line-height:1.7">
+    <strong style="color:#2d4a2b">What happens next?</strong><br/>
+    1. Order confirmed & being processed 📦<br/>
+    2. Quality check & packaging 🌿<br/>
+    3. Shipped via courier 🚚<br/>
+    4. Delivered to your door 🏠
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script src="premium.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if(id) document.getElementById('ord-id').textContent='#'+id.slice(0,8).toUpperCase();
+});
+</script>
+</body>
+</html>

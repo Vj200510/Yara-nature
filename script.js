@@ -1,54 +1,54 @@
-// ═══════ NAVBAR TOGGLE ═══════
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+// ═══════════════════════════════════════════════════════
+//  YARA NATURE — Inner Pages Script
+// ═══════════════════════════════════════════════════════
 
-// ═══════ REVIEW CAROUSEL ═══════
+// ── Navbar Toggle ──
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) navLinks.classList.remove('open');
+  });
+}
+
+// ── Review Carousel ──
 let currentReview = 0;
 const slides = document.querySelectorAll('.review-slide');
-const dots = document.querySelectorAll('.dot');
+const dots   = document.querySelectorAll('.dot');
 
 function showReview(index) {
+  if (!slides.length) return;
   slides.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
   slides[index].classList.add('active');
-  dots[index].classList.add('active');
+  if (dots[index]) dots[index].classList.add('active');
   currentReview = index;
 }
 
 function nextReview() {
+  if (!slides.length) return;
   showReview((currentReview + 1) % slides.length);
 }
 
 function prevReview() {
+  if (!slides.length) return;
   showReview((currentReview - 1 + slides.length) % slides.length);
 }
 
-function goToReview(index) {
-  showReview(index);
-}
+function goToReview(index) { showReview(index); }
 
-// Auto-rotate carousel every 4 seconds
-setInterval(nextReview, 4000);
+if (slides.length > 1) setInterval(nextReview, 4000);
 
-// ═══════ STICKY BAR VISIBILITY ═══════
-const stickyBar = document.getElementById('order');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    stickyBar.style.opacity = '1';
-    stickyBar.style.transform = 'translateY(0)';
-  }
-});
-
-// ═══════ SMOOTH SCROLL FOR NAV LINKS ═══════
+// ── Smooth Scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      navLinks.classList.remove('open');
+      if (navLinks) navLinks.classList.remove('open');
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });

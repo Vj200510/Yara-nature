@@ -13,9 +13,21 @@ const app = express();
 // ── Security ──────────────────────────────────────────
 app.use(helmet({ contentSecurityPolicy: false, crossOriginResourcePolicy: false }));
 
-// CORS — allow all localhost origins in dev
+// CORS — locked to known origins in production
+const ALLOWED_ORIGINS = [
+  'https://yara-nature.onrender.com',
+  'http://localhost:3000',
+  'http://localhost:5001',
+  'http://127.0.0.1:5001',
+];
 app.use(cors({
-  origin: (origin, cb) => cb(null, true), // open in dev; restrict in production
+  origin: (origin, cb) => {
+    if (!origin || ALLOWED_ORIGINS.includes(origin) || process.env.NODE_ENV === 'development') {
+      cb(null, true);
+    } else {
+      cb(new Error(`CORS blocked: ${origin}`));
+    }
+  },
   credentials: true,
   methods: ['GET','POST','PUT','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],

@@ -1,7 +1,9 @@
 // ═══════════════════════════════════════════════════
 //  YARA NATURE — Admin Dashboard JS
 // ═══════════════════════════════════════════════════
-const API = 'https://yara-nature.onrender.com/api';
+const API = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:5001/api'
+  : 'https://yara-nature.onrender.com/api';
 let adminToken = localStorage.getItem('yn_admin_token');
 let adminUser  = JSON.parse(localStorage.getItem('yn_admin_user') || '{}');
 let currentPage = 'dashboard';
@@ -183,7 +185,7 @@ async function loadProducts() {
     const { products } = await req('/products');
     document.getElementById('productsBody').innerHTML = (products || []).map(p => `
       <tr>
-        <td><img src="${p.product_images?.[0]?.url || '../images/product-bottle.jpeg'}" style="width:44px;height:52px;object-fit:cover;border-radius:6px"/></td>
+        <td><img src="${p.product_images?.[0]?.url || '../images/product-bottle.jpeg'}" style="width:44px;height:52px;object-fit:contain;border-radius:6px;background:#f9f6f0;padding:3px"/></td>
         <td><strong>${p.name}</strong><br/><small style="color:#888">${p.category}</small></td>
         <td>₹${p.price}</td>
         <td><s style="color:#aaa">₹${p.mrp}</s></td>

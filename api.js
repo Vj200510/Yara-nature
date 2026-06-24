@@ -1,7 +1,10 @@
 // ═══════════════════════════════════════════════════════
 //  YARA NATURE — Complete Frontend API & Button Wiring
 // ═══════════════════════════════════════════════════════
-const API_BASE = 'https://yara-nature.onrender.com/api';
+// ── Auto-detect local vs production ──────────────────
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:5001/api'
+  : 'https://yara-nature.onrender.com/api';
 
 // ── Core fetch ────────────────────────────────────────
 async function api(path, method = 'GET', body = null) {
@@ -221,7 +224,7 @@ async function openCart() {
     document.getElementById('cart-items').innerHTML = items.map(item => `
       <div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f5f0e6" id="cart-item-${item.id}">
         <img src="${item.product?.product_images?.[0]?.url || 'images/product-bottle.jpeg'}"
-          style="width:60px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0"/>
+          style="width:60px;height:72px;object-fit:contain;border-radius:8px;flex-shrink:0;background:#f9f6f0;padding:3px"/>
         <div style="flex:1">
           <div style="font-weight:600;font-size:0.85rem;color:#1c1c1c;margin-bottom:4px">${item.product?.name || 'Yara Nature Oil'}</div>
           <div style="font-size:0.8rem;color:#888;margin-bottom:8px">₹${item.product?.price} × ${item.quantity}</div>
@@ -253,7 +256,7 @@ async function openCart() {
         <span style="font-weight:700">Total</span>
         <span style="font-weight:800;font-size:1.1rem;color:#2d4a2b">₹${cart.totalPrice?.toFixed(0)}</span>
       </div>
-      <button onclick="closeCart();showToast('Checkout coming soon!','info')"
+      <button onclick="closeCart();window.location.href='checkout.html'"
         style="width:100%;background:#2d4a2b;color:#fff;border:none;padding:13px;border-radius:6px;font-weight:700;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;gap:8px">
         🛒 Proceed to Checkout
       </button>
@@ -439,8 +442,10 @@ function updateNavForUser(user) {
         <span>${user.name.split(' ')[0]}</span>
       </a>
       <div id="user-dropdown" style="display:none;position:absolute;top:100%;right:0;background:#fff;border:1px solid #e0ddd4;border-radius:8px;padding:8px;min-width:150px;box-shadow:0 4px 16px rgba(0,0,0,0.1);z-index:200">
-        <a href="#" style="display:block;padding:8px 12px;font-size:0.83rem;color:#333;text-decoration:none;border-radius:5px" onmouseover="this.style.background='#f5f0e6'" onmouseout="this.style.background=''">👤 My Orders</a>
-        <a href="http://localhost:5001/admin/login.html" style="display:${user.role==='admin'?'block':'none'};padding:8px 12px;font-size:0.83rem;color:#2d4a2b;text-decoration:none;font-weight:700;border-radius:5px" onmouseover="this.style.background='#f5f0e6'" onmouseout="this.style.background=''">🔐 Admin Panel</a>
+        <a href="dashboard.html" style="display:block;padding:8px 12px;font-size:0.83rem;color:#333;text-decoration:none;border-radius:5px" onmouseover="this.style.background='#f5f0e6'" onmouseout="this.style.background=''">�� My Account</a>
+        <a href="dashboard.html#orders" style="display:block;padding:8px 12px;font-size:0.83rem;color:#333;text-decoration:none;border-radius:5px" onmouseover="this.style.background='#f5f0e6'" onmouseout="this.style.background=''">📦 My Orders</a>
+        <a href="track-order.html" style="display:block;padding:8px 12px;font-size:0.83rem;color:#333;text-decoration:none;border-radius:5px" onmouseover="this.style.background='#f5f0e6'" onmouseout="this.style.background=''">🚚 Track Order</a>
+        <a href="admin/login.html" style="display:${user.role==='admin'?'block':'none'};padding:8px 12px;font-size:0.83rem;color:#2d4a2b;text-decoration:none;font-weight:700;border-radius:5px" onmouseover="this.style.background='#f5f0e6'" onmouseout="this.style.background=''">🔐 Admin Panel</a>
         <hr style="margin:6px 0;border:none;border-top:1px solid #f0f0f0"/>
         <a href="#" onclick="handleLogout()" style="display:block;padding:8px 12px;font-size:0.83rem;color:#e63f2e;text-decoration:none;border-radius:5px" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background=''">🚪 Logout</a>
       </div>`;
@@ -495,33 +500,53 @@ async function handleOrderNow(e) {
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── Search icon ──────────────────────────────────────
-  document.querySelectorAll('.icon-btn[aria-label="Search"], [data-action="search"]').forEach(btn => {
+  document.querySelectorAll('#searchBtn, .icon-btn[aria-label="Search"], [data-action="search"]').forEach(btn => {
     btn.addEventListener('click', openSearch);
   });
 
   // ── Cart icon ─────────────────────────────────────────
-  document.querySelectorAll('.icon-btn.cart-icon, .cart-icon, [aria-label="Cart"]').forEach(btn => {
+  document.querySelectorAll('#cartBtn, .icon-btn.cart-icon, .cart-icon, [aria-label="Cart"]').forEach(btn => {
     btn.addEventListener('click', openCart);
   });
 
-  // ── ORDER NOW buttons (all of them) ──────────────────
-  document.querySelectorAll('.btn-green, [data-action="order"]').forEach(btn => {
-    if (!btn.closest('.footer-cta') && !btn.closest('#sticky-bar') && !btn.closest('.hero-btns') && !btn.closest('.sb-btns')) {
-      btn.addEventListener('click', handleOrderNow);
-    }
-  });
-  // Hero ORDER NOW
-  document.querySelectorAll('.hero-btns .btn-green, .sb-btns .btn-green, .footer-cta .btn-green, .sticky-bar .btn-green').forEach(btn => {
-    btn.addEventListener('click', handleOrderNow);
+  // ── All ORDER NOW / BUY NOW buttons by ID ────────────
+  const orderBtnIds = ['heroBuyBtn','productBuyNow','smbBuyBtn','footerOrderBtn'];
+  orderBtnIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', handleOrderNow);
   });
 
-  // ── WHATSAPP buttons ──────────────────────────────────
-  document.querySelectorAll('.btn-whatsapp, [aria-label="WhatsApp"]').forEach(btn => {
-    if (!btn.closest('.footer-social') && !btn.href?.includes('wa.me')) {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openWhatsApp();
-      });
+  // ── Add to Cart button ────────────────────────────────
+  const addCartBtn = document.getElementById('productAddCart');
+  if (addCartBtn) {
+    addCartBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const qtyEl = document.getElementById('qtyNum');
+      const qty = qtyEl ? parseInt(qtyEl.textContent) || 1 : 1;
+      if (!Auth.isLoggedIn()) { showToast('Please login to add to cart', 'error'); setTimeout(() => showLoginModal(), 900); return; }
+      try {
+        const { products } = await api('/products?featured=true&limit=1');
+        const pid = products?.[0]?.id;
+        if (!pid) { openWhatsApp(); return; }
+        await api('/cart', 'POST', { productId: pid, quantity: qty });
+        updateCartBadge(qty);
+        showToast(`✅ Added ${qty} item(s) to cart!`);
+        setTimeout(openCart, 600);
+      } catch (e) { showToast('❌ ' + e.message, 'error'); }
+    });
+  }
+
+  // ── WhatsApp buttons ──────────────────────────────────
+  const waBtnIds = ['heroWaBtn','smbWaBtn','floatingWa'];
+  waBtnIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', (e) => { e.preventDefault(); openWhatsApp(); });
+  });
+
+  // ── Remaining .btn-green (fallback) ──────────────────
+  document.querySelectorAll('.btn-green:not([id])').forEach(btn => {
+    if (!btn.closest('.footer-wa-btn')) {
+      btn.addEventListener('click', handleOrderNow);
     }
   });
 
@@ -579,11 +604,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!grid) return;
       grid.innerHTML = data.reviews.map(r => `
         <div class="review-card">
-          <div class="r-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
-          <p class="r-quote">"${r.comment}"</p>
-          <div class="r-author">
-            <div class="r-avatar r-avatar-initials">${r.name[0]}</div>
-            <div><span class="r-name">${r.name}</span><span class="r-verified">✅ Verified Buyer</span></div>
+          <div class="rev-stars r-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+          <p class="rev-text r-quote">"${r.comment}"</p>
+          <div class="rev-author r-author">
+            <div class="rev-avatar r-avatar" style="background:#2d4a2b;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem">
+              ${(r.name||'U')[0].toUpperCase()}
+            </div>
+            <div>
+              <div class="rev-name r-name">${r.name}</div>
+              <div class="rev-verified r-verified">✅ Verified Buyer</div>
+            </div>
           </div>
         </div>`).join('');
     }).catch(() => {});

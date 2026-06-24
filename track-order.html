@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Track Order – Yara Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="premium.css"/>
+</head>
+<body style="background:var(--cream)">
+<header class="navbar"><div class="nav-container">
+  <a href="index.html" class="nav-logo"><img src="images/product-bottle.jpeg" alt="Yara Nature"/><div class="logo-text-wrap"><span class="logo-yn">YARA NATURE</span><span class="logo-tag">Pure Wellness from Nature</span></div></a>
+</div></header>
+<div style="max-width:600px;margin:60px auto;padding:0 24px">
+  <div style="background:#fff;border-radius:20px;padding:40px 36px;box-shadow:0 8px 32px rgba(0,0,0,0.1)">
+    <h1 style="font-family:'Playfair Display',serif;color:#2d4a2b;font-size:1.6rem;margin-bottom:6px">📦 Track Your Order</h1>
+    <p style="color:#888;margin-bottom:24px;font-size:0.9rem">Enter your Order ID to get real-time status updates</p>
+    <div style="display:flex;gap:10px;margin-bottom:20px">
+      <input id="track-input" type="text" placeholder="Order ID (e.g. A1B2C3D4)" style="flex:1;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:0.9rem;outline:none"/>
+      <button onclick="trackOrder()" class="btn-hero-primary" style="padding:12px 20px;flex-shrink:0">Track</button>
+    </div>
+    <div id="track-result"></div>
+    <div style="text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #f0f0f0">
+      <p style="font-size:0.82rem;color:#888;margin-bottom:10px">Need help with your order?</p>
+      <a href="https://wa.me/919999999999" target="_blank" class="btn-whatsapp-order" style="display:inline-flex;text-decoration:none">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+</div>
+<script src="components.js"></script>
+<script src="premium.js"></script>
+<script>
+async function trackOrder(){
+  const id = document.getElementById('track-input').value.trim();
+  if(!id){ toast('Please enter an Order ID','error'); return; }
+  if(!Auth.isLoggedIn()){ showAuthModal(); return; }
+  const res = document.getElementById('track-result');
+  res.innerHTML='<div style="text-align:center;color:#aaa;padding:20px">Looking up order...</div>';
+  try{
+    const {order} = await apiFetch('/orders/'+id);
+    const steps = ['processing','confirmed','shipped','delivered'];
+    const idx = steps.indexOf(order.order_status);
+    res.innerHTML=`
+      <div style="background:#f5f0e6;border-radius:12px;padding:20px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:16px">
+          <div><div style="font-weight:700;color:#2d4a2b">#${order.id.slice(0,8).toUpperCase()}</div><div style="font-size:0.78rem;color:#888">${new Date(order.created_at).toLocaleDateString('en-IN')}</div></div>
+          <span style="background:#dcfce7;color:#166534;padding:4px 12px;border-radius:12px;font-size:0.78rem;font-weight:700;text-transform:capitalize">${order.order_status}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;position:relative">
+          ${steps.map((s,i)=>`<div style="text-align:center;flex:1">
+            <div style="width:32px;height:32px;border-radius:50%;margin:0 auto 6px;
+              background:${i<=idx?'#2d4a2b':'#ddd'};color:${i<=idx?'#fff':'#aaa'};
+              display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;position:relative;z-index:2">
+              ${i<=idx?'✓':i+1}</div>
+            <div style="font-size:0.68rem;color:${i<=idx?'#2d4a2b':'#aaa'};font-weight:${i<=idx?700:400};text-transform:capitalize">${s}</div>
+          </div>`).join('')}
+        </div>
+        <div style="margin-top:16px;font-size:0.82rem;color:#555">Shipping to: ${order.shipping_name}, ${order.shipping_city} – ${order.shipping_pincode}</div>
+      </div>`;
+  }catch(e){
+    res.innerHTML=`<div style="background:#fff5f5;border-radius:10px;padding:16px;color:#e63f2e;font-size:0.85rem">Order not found. Please check your Order ID or <a href="dashboard.html" style="color:#2d4a2b;font-weight:600">view all orders</a></div>`;
+  }
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const user=Auth.getUser();
+  if(user){ updateNavUI(user); loadCartCount(); }
+  const params=new URLSearchParams(window.location.search);
+  if(params.get('id')){ document.getElementById('track-input').value=params.get('id'); trackOrder(); }
+});
+</script>
+</body>
+</html>

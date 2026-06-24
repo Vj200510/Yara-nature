@@ -50,29 +50,37 @@ exports.placeOrder = async (req, res) => {
       couponCode, itemsPrice, taxPrice, shippingPrice, discount, totalPrice,
     } = req.body;
 
-    // Verify Razorpay signature
-    const body = razorpay_order_id + '|' + razorpay_payment_id;
-    const expectedSig = crypto
-      .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
-      .update(body.toString()).digest('hex');
+    // Detect COD order (signature will be 'cod')
+    const isCOD = razorpay_signature === 'cod';
 
-    const isValid = expectedSig === razorpay_signature;
-    if (!isValid) return error(res, 'Payment verification failed', 400);
+    // Verify Razorpay signature for online payments only
+    if (!isCOD) {
+      if (!process.env.RAZORPAY_KEY_SECRET || process.env.RAZORPAY_KEY_SECRET.includes('your_')) {
+        return error(res, 'Payment gateway not configured', 503);
+      }
+      const body = razorpay_order_id + '|' + razorpay_payment_id;
+      const expectedSig = crypto
+        .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+        .update(body.toString()).digest('hex');
+      if (expectedSig !== razorpay_signature) {
+        return error(res, 'Payment verification failed', 400);
+      }
+    }
 
     // Create order in DB
     const { data: order, error: dbErr } = await supabase.from('orders').insert({
       user_id: req.user.id,
       items_price: itemsPrice,
-      tax_price: taxPrice,
-      shipping_price: shippingPrice,
+      tax_price: taxPrice || 0,
+      shipping_price: shippingPrice || 0,
       discount_amount: discount || 0,
       total_price: totalPrice,
-      coupon_code: couponCode,
-      payment_status: 'paid',
-      paid_at: new Date(),
-      razorpay_order_id,
-      razorpay_payment_id,
-      razorpay_signature,
+      coupon_code: couponCode || null,
+      payment_status: isCOD ? 'pending' : 'paid',
+      paid_at: isCOD ? null : new Date(),
+      razorpay_order_id: isCOD ? null : razorpay_order_id,
+      razorpay_payment_id: isCOD ? null : razorpay_payment_id,
+      razorpay_signature: isCOD ? null : razorpay_signature,
       order_status: 'confirmed',
       shipping_name:     shippingAddress.name,
       shipping_phone:    shippingAddress.phone,

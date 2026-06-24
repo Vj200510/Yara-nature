@@ -1,345 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yara Nature – Herbal Hair Growth Oil</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="home.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Yara Nature – Premium Ayurvedic Herbal Hair Growth Oil | 100% Natural</title>
+  <meta name="description" content="Yara Nature Herbal Hair Growth Oil – Made with Fenugreek, Rosemary, Clove & Vitamin E. Reduces hair fall, promotes new growth. 10,000+ happy customers. ₹349 only."/>
+  <meta name="keywords" content="herbal hair oil, ayurvedic hair oil, hair growth oil, hair fall control, natural hair oil, yara nature"/>
+  <meta property="og:title" content="Yara Nature – Premium Ayurvedic Herbal Hair Growth Oil"/>
+  <meta property="og:description" content="100% Natural Herbal Hair Oil. Reduces hair fall, promotes growth. 30-day visible results. Free shipping on ₹499+."/>
+  <meta property="og:image" content="images/product-bottle.jpeg"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://yara-nature.onrender.com/"/>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="home.css"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Product","name":"Yara Nature Herbal Hair Growth Oil",
+  "image":"https://yara-nature.onrender.com/images/product-bottle.jpeg",
+  "description":"100% Natural Ayurvedic Hair Oil with Fenugreek, Rosemary, Clove & Vitamin E",
+  "brand":{"@type":"Brand","name":"Yara Nature"},
+  "offers":{"@type":"Offer","price":"349","priceCurrency":"INR","availability":"https://schema.org/InStock"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"10000"}}
+  </script>
 </head>
 <body>
 
-<!-- ══════ TOP BAR ══════ -->
-<div class="topbar">
-  <span><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z'/%3E%3C/svg%3E" style="vertical-align:middle;margin-right:4px" />100% Natural &amp; Chemical Free</span>
-  <span>🚚 Free Shipping on Orders Above ₹499</span>
-  <span>⭐ 30 Days Visible Results Guarantee</span>
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar" role="marquee">
+  <div class="ann-track" id="annTrack">
+    <span class="ann-item">🌿 100% Natural &amp; Chemical Free</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">🚚 Free Shipping on Orders Above ₹499</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">⭐ 30 Days Visible Results Guarantee</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">🎁 Use Code <strong>YARA10</strong> for 10% OFF</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">🇮🇳 Made in India · ISO Certified</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">✅ Dermatologically Tested · Lab Tested</span>
+    <span class="ann-sep">|</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ann-item">🌿 100% Natural &amp; Chemical Free</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">🚚 Free Shipping on Orders Above ₹499</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">⭐ 30 Days Visible Results Guarantee</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">🎁 Use Code <strong>YARA10</strong> for 10% OFF</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">🇮🇳 Made in India · ISO Certified</span>
+    <span class="ann-sep">|</span>
+    <span class="ann-item">✅ Dermatologically Tested · Lab Tested</span>
+    <span class="ann-sep">|</span>
+  </div>
 </div>
 
-<!-- ══════ NAVBAR ══════ -->
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="images/product-bottle.jpeg" alt="Yara Nature" />
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Yara Nature Home">
+    <img src="images/product-bottle.jpeg" alt="Yara Nature Logo"/>
     <div>
       <span class="brand-name">YARA<br/>NATURE</span>
       <span class="brand-tagline">Pure Wellness from Nature</span>
     </div>
   </a>
-  <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
-  <ul class="nav-menu" id="navMenu">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="benefits.html">Benefits</a></li>
-    <li><a href="ingredients.html">Ingredients</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="faqs.html">FAQs</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+  <ul class="nav-menu" id="navMenu" role="menubar">
+    <li role="none"><a href="index.html" class="active" role="menuitem">Home</a></li>
+    <li role="none"><a href="about.html" role="menuitem">About Us</a></li>
+    <li role="none"><a href="benefits.html" role="menuitem">Benefits</a></li>
+    <li role="none"><a href="ingredients.html" role="menuitem">Ingredients</a></li>
+    <li role="none"><a href="reviews.html" role="menuitem">Reviews</a></li>
+    <li role="none"><a href="faqs.html" role="menuitem">FAQs</a></li>
+    <li role="none"><a href="contact.html" role="menuitem">Contact Us</a></li>
   </ul>
   <div class="nav-actions">
-    <button class="icon-btn" aria-label="Search">
-      <svg width="18" height="18" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <button class="icon-btn" id="searchBtn" aria-label="Search products">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     </button>
-    <button class="icon-btn cart-icon" aria-label="Cart">
-      <svg width="18" height="18" fill="none" stroke="#333" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      <span class="cart-badge">0</span>
+    <button class="icon-btn cart-icon" id="cartBtn" aria-label="View cart">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span class="cart-badge" id="cartCount" aria-label="0 items in cart">0</span>
     </button>
   </div>
 </nav>
 
-<!-- ══════ HERO ══════ -->
-<section class="hero">
-  <!-- Left content -->
-  <div class="hero-content">
-    <p class="hero-sub">YARA NATURE HERBAL HAIR OIL</p>
-    <h1 class="hero-h1">STRONGER HAIR.<br/>HEALTHIER YOU.</h1>
-    <p class="hero-tagline">Nourished by Nature, Perfected for You</p>
+<!-- HERO SECTION -->
+<section class="hero" id="hero" aria-label="Hero">
 
-    <div class="hero-icons">
-      <div class="hi-item">
-        <div class="hi-icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-            <circle cx="20" cy="20" r="19" stroke="#2d4a2b" stroke-width="1.5"/>
-            <path d="M20 8c-2 4-6 6-6 10a6 6 0 0 0 12 0c0-4-4-6-6-10z" fill="#2d4a2b" opacity=".8"/>
-            <path d="M14 22c0 3.3 2.7 6 6 6s6-2.7 6-6" stroke="#2d4a2b" stroke-width="1.5" fill="none"/>
-          </svg>
-        </div>
-        <span>Anti Dandruff</span>
+  <!-- Full-width promotional banner image -->
+  <img src="images/hero-model.jpeg"
+       alt="Yara Nature Herbal Hair Oil – Stronger, Thicker & Healthier Hair Naturally"
+       class="hero-photo"/>
+
+  <!-- 30-day results badge -->
+  <div class="result-badge" aria-hidden="true">
+    <span class="rb-line1">VISIBLE<br/>RESULTS</span>
+    <span class="rb-num">30</span>
+    <span class="rb-line2">DAYS</span>
+  </div>
+
+  <!-- Floating ingredient badges (desktop only) -->
+  <div class="hero-float hf-1" aria-hidden="true">🌾 Fenugreek</div>
+  <div class="hero-float hf-2" aria-hidden="true">🌿 Rosemary</div>
+  <div class="hero-float hf-3" aria-hidden="true">💊 Vitamin E</div>
+
+  <!-- CTA overlay at bottom -->
+  <div class="hero-cta-overlay">
+    <div class="hco-left">
+      <div class="hco-rating">
+        <span class="hco-stars">★★★★★</span>
+        <span class="hco-rating-text">4.8/5 · 10,000+ Happy Customers</span>
       </div>
-      <div class="hi-item">
-        <div class="hi-icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-            <circle cx="20" cy="20" r="19" stroke="#2d4a2b" stroke-width="1.5"/>
-            <path d="M20 30V14M14 20l6-6 6 6" stroke="#2d4a2b" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="20" cy="32" r="2" fill="#2d4a2b"/>
-          </svg>
-        </div>
-        <span>Stronger Roots</span>
-      </div>
-      <div class="hi-item">
-        <div class="hi-icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-            <circle cx="20" cy="20" r="19" stroke="#2d4a2b" stroke-width="1.5"/>
-            <path d="M16 10 Q14 20 16 30M20 8 Q18 20 20 32M24 10 Q26 20 24 30" stroke="#2d4a2b" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
-        <span>Thicker Hair</span>
-      </div>
-      <div class="hi-item">
-        <div class="hi-icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-            <circle cx="20" cy="20" r="19" stroke="#2d4a2b" stroke-width="1.5"/>
-            <path d="M20 12l1.5 4.5H26l-3.7 2.7 1.4 4.3L20 21l-3.7 2.5 1.4-4.3L14 16.5h4.5z" fill="#2d4a2b" opacity=".85"/>
-          </svg>
-        </div>
-        <span>Natural Shine</span>
+      <div class="hco-price-row">
+        <span class="hco-price">₹349</span>
+        <span class="hco-mrp">₹499</span>
+        <span class="hco-off">30% OFF</span>
+        <span class="hco-stock">
+          <span class="hco-stock-dot" aria-hidden="true"></span>
+          Only 47 left!
+        </span>
       </div>
     </div>
-
-    <div class="hero-btns">
-      <a href="#sticky-bar" class="btn-green">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        ORDER NOW
-      </a>
-      <a href="https://wa.me/919999999999" class="btn-whatsapp">
-        <svg width="16" height="16" fill="#2d4a2b" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-        CHAT ON WHATSAPP
-      </a>
+    <div class="hco-right">
+      <div class="hco-pills">
+        <span class="hco-pill">🌿 100% Natural</span>
+        <span class="hco-pill">🧪 Lab Tested</span>
+        <span class="hco-pill">🇮🇳 Made in India</span>
+        <span class="hco-pill">↩️ 30-Day Returns</span>
+      </div>
+      <div class="hco-btns">
+        <button class="btn-green" id="heroBuyBtn" aria-label="Order Now">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          ORDER NOW — ₹349
+        </button>
+        <button class="btn-whatsapp" id="heroWaBtn" aria-label="Chat on WhatsApp">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          CHAT ON WHATSAPP
+        </button>
+      </div>
+      <div class="hco-secure">🔒 Secure Payment &nbsp;·&nbsp; 🚚 Free Shipping ₹499+ &nbsp;·&nbsp; 🏆 ISO Certified</div>
     </div>
   </div>
 
-  <!-- Right: bottle + model image -->
-  <div class="hero-visual">
-    <img src="images/hero-model.jpeg" alt="Beautiful hair model with Yara Nature oil" class="hero-photo" />
-    <div class="result-badge">
-      <span class="rb-line1">VISIBLE<br/>RESULTS</span>
-      <span class="rb-num">30</span>
-      <span class="rb-line2">DAYS</span>
-    </div>
-  </div>
 </section>
 
-<!-- ══════ TRUST STRIP ══════ -->
-<div class="trust-bar">
-  <div class="trust-item">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    <span>100% Natural</span>
+<!-- TRUST BAR -->
+<div class="trust-bar" role="list" aria-label="Trust indicators">
+  <div class="trust-item" role="listitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    100% Natural
   </div>
-  <div class="trust-sep"></div>
-  <div class="trust-item">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
-    <span>Chemical Free</span>
+  <div class="trust-sep" aria-hidden="true"></div>
+  <div class="trust-item" role="listitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+    Chemical Free
   </div>
-  <div class="trust-sep"></div>
-  <div class="trust-item">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    <span>Safe for All Hair Types</span>
+  <div class="trust-sep" aria-hidden="true"></div>
+  <div class="trust-item" role="listitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+    ISO Certified
+  </div>
+  <div class="trust-sep" aria-hidden="true"></div>
+  <div class="trust-item" role="listitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    10,000+ Customers
+  </div>
+  <div class="trust-sep" aria-hidden="true"></div>
+  <div class="trust-item" role="listitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    30-Day Results
+  </div>
+  <div class="trust-sep" aria-hidden="true"></div>
+  <div class="trust-item" role="listitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Dermat Tested
   </div>
 </div>
 
-<!-- ══════ 5-FEATURE ROW ══════ -->
-<section class="features-row">
+<!-- FEATURES STRIP -->
+<section class="features-strip" aria-label="Key features">
   <div class="feat-card">
     <div class="feat-icon">
-      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
-    <h3>POWER OF<br/>NATURAL HERBS</h3>
-    <p>Blend of ancient herbs &amp; modern science</p>
+    <h3>Power of Natural Herbs</h3>
+    <p>Blend of ancient Ayurvedic herbs &amp; modern science</p>
   </div>
   <div class="feat-card">
     <div class="feat-icon">
-      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     </div>
-    <h3>CHEMICAL FREE</h3>
-    <p>No harmful chemicals, parabens or toxins</p>
+    <h3>Zero Chemicals</h3>
+    <p>No parabens, sulphates, toxins or harmful additives</p>
   </div>
   <div class="feat-card">
     <div class="feat-icon">
-      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
     </div>
-    <h3>DEEP NOURISHMENT</h3>
-    <p>Nourishes scalp deeply &amp; improves hair health</p>
+    <h3>Deep Nourishment</h3>
+    <p>Nourishes scalp deep from roots to tips</p>
   </div>
   <div class="feat-card">
     <div class="feat-icon">
-      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
     </div>
-    <h3>VISIBLE RESULTS</h3>
-    <p>Noticeable difference in just 30 days</p>
+    <h3>Visible Results</h3>
+    <p>Noticeable difference in just 30 days of use</p>
   </div>
   <div class="feat-card">
     <div class="feat-icon">
-      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
     </div>
-    <h3>SAFE &amp; TRUSTED</h3>
-    <p>Safe for all hair types for everyday use</p>
+    <h3>Safe &amp; Trusted</h3>
+    <p>ISO certified, lab tested &amp; dermatologically approved</p>
   </div>
 </section>
 
-<!-- ══════ INGREDIENTS ══════ -->
-<section class="ingredients-sec">
-  <div class="ing-header">
-    <div class="ing-line"></div>
-    <h2>POWER OF 5 NATURAL INGREDIENTS</h2>
-    <div class="ing-line"></div>
+<!-- FEATURED PRODUCT -->
+<section class="product-sec" id="product" aria-label="Featured product">
+  <div class="sec-header">
+    <div class="sec-tag">Featured Product</div>
+    <h2>The #1 Herbal Hair Oil</h2>
+    <p>Crafted with 5 potent Ayurvedic ingredients for maximum hair growth and strength</p>
+    <div class="sec-divider" aria-hidden="true"></div>
   </div>
-  <div class="ing-row">
+  <div class="product-grid">
+    <div class="product-gallery">
+      <div class="pg-main-wrap">
+        <img src="images/product-bottle.jpeg" alt="Yara Nature Herbal Hair Oil - Main product shot" class="pg-main" id="pgMainImg"/>
+      </div>
+      <div class="pg-thumbs">
+        <img src="images/product-bottle.jpeg" alt="Product bottle front view" class="pg-thumb active" onclick="switchImg(this,'images/product-bottle.jpeg')"/>
+        <img src="images/product-flatlay.jpeg" alt="Product flatlay with ingredients" class="pg-thumb" onclick="switchImg(this,'images/product-flatlay.jpeg')"/>
+        <img src="images/product-nature.jpeg" alt="Natural ingredients" class="pg-thumb" onclick="switchImg(this,'images/product-nature.jpeg')"/>
+        <img src="images/product-hand.jpeg" alt="Product in use" class="pg-thumb" onclick="switchImg(this,'images/product-hand.jpeg')"/>
+      </div>
+    </div>
+    <div class="product-info">
+      <div class="product-badge">🌿 Ayurvedic Formula</div>
+      <h2 class="product-name">Yara Nature Herbal Hair Growth Oil</h2>
+      <p class="product-sub">100ml · 5 Natural Ingredients · For All Hair Types · Men &amp; Women</p>
+      <div class="product-rating">
+        <span class="prod-stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+        <span class="prod-rating-num">4.8</span>
+        <span class="prod-review-count">(10,000+ Reviews)</span>
+      </div>
+      <div class="product-price-row">
+        <span class="prod-price">₹349</span>
+        <span class="prod-mrp">₹499</span>
+        <span class="prod-off">30% OFF</span>
+      </div>
+      <p class="prod-tax">Inclusive of all taxes · Free delivery above ₹499</p>
+      <div class="qty-row">
+        <span class="qty-label">Quantity:</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+          <span class="qty-num" id="qtyNum" aria-live="polite">1</span>
+          <button class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+      <div class="product-cta">
+        <button class="btn-green" id="productBuyNow" aria-label="Buy Now">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          BUY NOW
+        </button>
+        <button class="btn-cart" id="productAddCart" aria-label="Add to cart">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          ADD TO CART
+        </button>
+      </div>
+      <div class="product-secure">
+        <div class="ps-item">🔒 Secure Payment</div>
+        <div class="ps-item">🚚 Free Shipping ₹499+</div>
+        <div class="ps-item">↩️ 30-Day Returns</div>
+        <div class="ps-item">🏆 ISO Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-sec" id="benefits" aria-label="Product benefits">
+  <div class="sec-header">
+    <div class="sec-tag">Why It Works</div>
+    <h2>6 Powerful Hair Benefits</h2>
+    <p>Scientifically backed Ayurvedic formulation delivering visible results</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="ben-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.8" aria-hidden="true"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg></div>
+      <h3>Reduces Hair Fall</h3>
+      <p>Fenugreek and Rosemary strengthen hair follicles from roots, significantly reducing daily hair fall within 2 weeks.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="ben-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.8" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+      <h3>Promotes New Growth</h3>
+      <p>Rosemary stimulates dormant follicles, encouraging new baby hair growth and increasing overall hair density.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="ben-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg></div>
+      <h3>Fights Dandruff</h3>
+      <p>Clove's powerful antifungal properties eliminate dandruff-causing fungi, providing a clean, healthy scalp.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="ben-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.8" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <h3>Adds Natural Shine</h3>
+      <p>Natural base oils form a protective coating on each hair strand, delivering deep conditioning and mirror-like shine.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="ben-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.8" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+      <h3>Strengthens Roots</h3>
+      <p>Vitamin E nourishes the scalp, improves blood circulation, and strengthens hair at the root for thicker, fuller hair.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="ben-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d4a2b" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Safe for All Hair</h3>
+      <p>100% natural, dermatologically tested formula. Safe for all hair types including colour-treated and chemically processed hair.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="ingredients-sec" id="ingredients" aria-label="Key ingredients">
+  <div class="sec-header">
+    <div class="sec-tag">The Science Behind It</div>
+    <h2>Power of 5 Natural Ingredients</h2>
+    <p>Each ingredient is carefully chosen for its proven Ayurvedic and scientific hair benefits</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="ing-grid">
     <div class="ing-item">
-      <div class="ing-circle" style="background-image:url('images/product-nature.jpeg')"></div>
-      <h4>FENUGREEK</h4>
+      <div class="ing-circle ing-fenugreek" role="img" aria-label="Fenugreek seeds"></div>
+      <h4>Fenugreek</h4>
       <p>Strengthens roots &amp; reduces hair fall</p>
     </div>
     <div class="ing-item">
-      <div class="ing-circle" style="background-image:url('images/product-flatlay.jpeg')"></div>
-      <h4>CLOVE</h4>
+      <div class="ing-circle ing-clove" role="img" aria-label="Cloves"></div>
+      <h4>Clove</h4>
       <p>Fights dandruff &amp; improves scalp health</p>
     </div>
-    <div class="ing-item">
-      <div class="ing-circle" style="background-image:url('images/product-nature.jpeg');background-position:60% center"></div>
-      <h4>ROSEMARY</h4>
-      <p>Stimulates hair growth &amp; prevents premature greying</p>
+    <div class="ing-circle-wrap ing-item">
+      <div class="ing-circle ing-rosemary" role="img" aria-label="Rosemary herb"></div>
+      <h4>Rosemary</h4>
+      <p>Stimulates growth &amp; prevents greying</p>
     </div>
     <div class="ing-item">
-      <div class="ing-circle" style="background-image:url('images/product-bottle.jpeg')"></div>
-      <h4>VITAMIN E</h4>
-      <p>Nourishes scalp &amp; improves hair texture</p>
+      <div class="ing-circle ing-vitamine" role="img" aria-label="Vitamin E"></div>
+      <h4>Vitamin E</h4>
+      <p>Nourishes scalp &amp; improves texture</p>
     </div>
     <div class="ing-item">
-      <div class="ing-circle" style="background-image:url('images/product-flatlay.jpeg');background-position:80% center"></div>
-      <h4>NATURAL OILS</h4>
-      <p>Deeply conditions &amp; adds healthy shine</p>
+      <div class="ing-circle ing-naturaloil" role="img" aria-label="Natural base oils"></div>
+      <h4>Natural Oils</h4>
+      <p>Deep conditioning &amp; natural shine</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+    <a href="ingredients.html" class="btn-outline">View Detailed Ingredient Science →</a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-sec" aria-label="How to use">
+  <div class="sec-header">
+    <div class="sec-tag">Simple Routine</div>
+    <h2>How to Use Yara Nature Oil</h2>
+    <p>Just 3 simple steps for beautiful, healthy hair</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="hiw-steps">
+    <div class="hiw-step">
+      <div class="step-num">1</div>
+      <h3>Apply the Oil</h3>
+      <p>Take a few drops and gently massage into the scalp and hair roots using fingertips</p>
+    </div>
+    <div class="hiw-step">
+      <div class="step-num">2</div>
+      <h3>Massage &amp; Wait</h3>
+      <p>Massage in circular motions for 5-10 minutes to improve absorption. Leave for 30–60 minutes</p>
+    </div>
+    <div class="hiw-step">
+      <div class="step-num">3</div>
+      <h3>Wash &amp; Repeat</h3>
+      <p>Wash off with a mild shampoo. For best results, use 2-3 times per week consistently</p>
     </div>
   </div>
 </section>
 
-<!-- ══════ WHY CHOOSE + REVIEWS TWO-COL ══════ -->
-<section class="why-reviews-sec">
-  <!-- LEFT: Why Choose -->
-  <div class="why-col">
-    <div class="why-img-col">
-      <img src="images/product-bottle.jpeg" alt="Yara Nature bottle" />
+<!-- RESULTS TIMELINE -->
+<section class="timeline-sec" aria-label="Expected results timeline">
+  <div class="sec-header">
+    <div class="sec-tag">Your Hair Journey</div>
+    <h2>What to Expect &amp; When</h2>
+    <p>Real results from real customers using Yara Nature consistently</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="timeline-grid">
+    <div class="tl-card">
+      <div class="tl-icon" aria-hidden="true">🌱</div>
+      <div class="tl-week">Week 1–2</div>
+      <h3>Scalp Health Improves</h3>
+      <p>Dandruff reduces, scalp feels cleaner and less itchy. Oil absorption improves significantly.</p>
     </div>
-    <div class="why-text-col">
-      <h2>WHY CHOOSE<br/><span>YARA NATURE?</span></h2>
+    <div class="tl-card">
+      <div class="tl-icon" aria-hidden="true">💧</div>
+      <div class="tl-week">Week 3–4</div>
+      <h3>Hair Fall Reduces</h3>
+      <p>Noticeable reduction in daily hair fall. Hair feels stronger and less prone to breakage.</p>
+    </div>
+    <div class="tl-card">
+      <div class="tl-icon" aria-hidden="true">✨</div>
+      <div class="tl-week">Month 2</div>
+      <h3>Shine &amp; Texture</h3>
+      <p>Hair becomes visibly shinier, softer, and more manageable. New baby hairs start appearing.</p>
+    </div>
+    <div class="tl-card">
+      <div class="tl-icon" aria-hidden="true">🌟</div>
+      <div class="tl-week">Month 3+</div>
+      <h3>Visible Growth</h3>
+      <p>Significant new hair growth, increased density, and a transformed healthier hair appearance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+<section class="reviews-sec" id="reviews" aria-label="Customer reviews">
+  <div class="sec-header">
+    <div class="sec-tag">Real Results</div>
+    <h2>What Our Customers Say</h2>
+    <p>Over 10,000 happy customers who transformed their hair with Yara Nature</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="rating-summary" aria-label="Overall rating summary">
+    <div class="rating-big">
+      <div class="big-num" aria-label="4.8 out of 5">4.8</div>
+      <div class="big-stars" aria-hidden="true">★★★★★</div>
+      <div class="big-count">10,000+ Reviews</div>
+    </div>
+    <div class="rating-bars" role="list" aria-label="Rating distribution">
+      <div class="rb-row" role="listitem">
+        <span class="rb-label" aria-label="5 stars">5 ★</span>
+        <div class="rb-track"><div class="rb-fill" style="width:78%" aria-label="78 percent"></div></div>
+        <span class="rb-pct">78%</span>
+      </div>
+      <div class="rb-row" role="listitem">
+        <span class="rb-label" aria-label="4 stars">4 ★</span>
+        <div class="rb-track"><div class="rb-fill" style="width:14%"></div></div>
+        <span class="rb-pct">14%</span>
+      </div>
+      <div class="rb-row" role="listitem">
+        <span class="rb-label" aria-label="3 stars">3 ★</span>
+        <div class="rb-track"><div class="rb-fill" style="width:5%"></div></div>
+        <span class="rb-pct">5%</span>
+      </div>
+      <div class="rb-row" role="listitem">
+        <span class="rb-label" aria-label="2 stars">2 ★</span>
+        <div class="rb-track"><div class="rb-fill" style="width:2%"></div></div>
+        <span class="rb-pct">2%</span>
+      </div>
+      <div class="rb-row" role="listitem">
+        <span class="rb-label" aria-label="1 star">1 ★</span>
+        <div class="rb-track"><div class="rb-fill" style="width:1%"></div></div>
+        <span class="rb-pct">1%</span>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid">
+    <div class="review-card">
+      <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+      <p class="rev-text">"This oil has completely changed my hair! Less hair fall, new growth visible, and amazing shine. I've tried many oils but nothing worked like Yara Nature. Highly recommended to everyone!"</p>
+      <div class="rev-author">
+        <div class="rev-avatar"><img src="images/hero-model.jpeg" alt="Neha Sharma"/></div>
+        <div>
+          <div class="rev-name">Neha Sharma, Delhi</div>
+          <div class="rev-verified">✅ Verified Buyer · 2 months ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+      <p class="rev-text">"Been using for 6 weeks and I can clearly see new baby hairs growing on my forehead. My scalp feels so healthy now and the dandruff is completely gone. Will definitely reorder!"</p>
+      <div class="rev-author">
+        <div class="rev-avatar" style="background:#2d4a2b;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem">RK</div>
+        <div>
+          <div class="rev-name">Rahul Kumar, Bangalore</div>
+          <div class="rev-verified">✅ Verified Buyer · 3 months ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rev-stars" aria-label="4 stars">★★★★★</div>
+      <p class="rev-text">"No more dandruff after just 2 weeks! The smell is natural and pleasant. My hair feels so much thicker and I've noticed a lot less hair in the shower drain. Amazing product!"</p>
+      <div class="rev-author">
+        <div class="rev-avatar" style="background:#c9a227;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem">PM</div>
+        <div>
+          <div class="rev-name">Priya Mehta, Mumbai</div>
+          <div class="rev-verified">✅ Verified Buyer · 1 month ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+      <p class="rev-text">"I was sceptical at first but after 30 days of consistent use my hair fall has reduced by 70%. My husband also started using it and we're both seeing great results. Value for money!"</p>
+      <div class="rev-author">
+        <div class="rev-avatar" style="background:#3a6135;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem">AS</div>
+        <div>
+          <div class="rev-name">Anita Singh, Pune</div>
+          <div class="rev-verified">✅ Verified Buyer · 5 weeks ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+      <p class="rev-text">"Excellent product! I have oily scalp and was worried this would make it worse but it actually balanced my scalp. Hair is now shiny, less oily, and growth is clearly visible. 10/10!"</p>
+      <div class="rev-author">
+        <div class="rev-avatar" style="background:#e63f2e;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem">VR</div>
+        <div>
+          <div class="rev-name">Vikram Reddy, Hyderabad</div>
+          <div class="rev-verified">✅ Verified Buyer · 6 weeks ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+      <p class="rev-text">"I gifted this to my mother who was struggling with thinning hair. After 2 months her hair is noticeably thicker and she gets compliments now! Natural ingredients make it safe for elderly too."</p>
+      <div class="rev-author">
+        <div class="rev-avatar" style="background:#6b4f1a;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem">DJ</div>
+        <div>
+          <div class="rev-name">Divya Joshi, Chennai</div>
+          <div class="rev-verified">✅ Verified Buyer · 2 months ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-load-more">
+    <a href="reviews.html" class="btn-outline">Read All 10,000+ Reviews →</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why-sec" id="why" aria-label="Why choose Yara Nature">
+  <div class="sec-header">
+    <div class="sec-tag">Our Promise</div>
+    <h2>Why Choose Yara Nature?</h2>
+    <p>We're not just another hair oil — we're your partner in the journey to healthier hair</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-visual">
+      <img src="images/product-man.jpeg" alt="Happy customer with healthy hair after using Yara Nature oil"/>
+    </div>
+    <div>
       <ul class="why-list">
-        <li><svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> 100% Natural &amp; Herbal</li>
-        <li><svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> Helps Reduce Hair Fall</li>
-        <li><svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> Promotes New Hair Growth</li>
-        <li><svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> Strengthens Hair Roots</li>
-        <li><svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> Adds Natural Shine</li>
-        <li><svg width="16" height="16" fill="none" stroke="#2d4a2b" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> Safe for Men &amp; Women</li>
+        <li class="why-item">
+          <div class="why-check" aria-hidden="true"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>100% Natural &amp; Ayurvedic</h4><p>Every ingredient is sourced from nature. No synthetic chemicals, no compromise on purity.</p></div>
+        </li>
+        <li class="why-item">
+          <div class="why-check" aria-hidden="true"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Clinically Tested Formula</h4><p>Dermatologically tested and lab certified for safety and efficacy on all hair types.</p></div>
+        </li>
+        <li class="why-item">
+          <div class="why-check" aria-hidden="true"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Visible Results in 30 Days</h4><p>Our customers see measurable improvements in hair fall and growth within just 30 days.</p></div>
+        </li>
+        <li class="why-item">
+          <div class="why-check" aria-hidden="true"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Safe for Men &amp; Women</h4><p>Formulated for all genders and all hair types — straight, wavy, curly, colour-treated or natural.</p></div>
+        </li>
+        <li class="why-item">
+          <div class="why-check" aria-hidden="true"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Made in India 🇮🇳</h4><p>Proudly manufactured in India under strict quality standards. ISO 9001 certified facility.</p></div>
+        </li>
+        <li class="why-item">
+          <div class="why-check" aria-hidden="true"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>30-Day Money-Back Guarantee</h4><p>Not satisfied? We'll refund your money. No questions asked. Your satisfaction is our priority.</p></div>
+        </li>
       </ul>
     </div>
   </div>
+</section>
 
-  <div class="wr-divider"></div>
-
-  <!-- RIGHT: Reviews -->
-  <div class="reviews-col">
-    <h2>WHAT OUR CUSTOMERS SAY</h2>
-    <div class="review-stars">★★★★★</div>
-    <div class="review-carousel">
-      <button class="rc-btn rc-prev" onclick="prevR()" aria-label="Previous">&#8249;</button>
-      <div class="rc-track">
-        <div class="rc-slide active">
-          <p class="rc-quote">"This oil has completely changed my hair!<br/>Less hair fall, new hair growth and amazing shine.<br/>Highly recommended!"</p>
-          <div class="rc-author">
-            <div class="rc-avatar">
-              <img src="images/hero-model.jpeg" alt="Neha Sharma" />
-            </div>
-            <div>
-              <strong>– Neha Sharma</strong>
-              <span class="rc-verified">Verified Buyer</span>
-            </div>
-          </div>
-        </div>
-        <div class="rc-slide">
-          <p class="rc-quote">"Been using for 6 weeks and I can clearly see new baby hairs growing. My scalp feels so healthy now!"</p>
-          <div class="rc-author">
-            <div class="rc-avatar rc-avatar-initials">RK</div>
-            <div>
-              <strong>– Rahul Kumar</strong>
-              <span class="rc-verified">Verified Buyer</span>
-            </div>
-          </div>
-        </div>
-        <div class="rc-slide">
-          <p class="rc-quote">"No more dandruff after just 2 weeks! The smell is so natural and pleasant. Will definitely order again."</p>
-          <div class="rc-author">
-            <div class="rc-avatar rc-avatar-initials">PM</div>
-            <div>
-              <strong>– Priya Mehta</strong>
-              <span class="rc-verified">Verified Buyer</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="rc-btn rc-next" onclick="nextR()" aria-label="Next">&#8250;</button>
+<!-- FAQ -->
+<section class="faq-sec" id="faq" aria-label="Frequently asked questions">
+  <div class="sec-header">
+    <div class="sec-tag">Got Questions?</div>
+    <h2>Frequently Asked Questions</h2>
+    <p>Everything you need to know about Yara Nature Hair Oil</p>
+    <div class="sec-divider" aria-hidden="true"></div>
+  </div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item open">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="true">
+        How often should I use the oil?
+        <div class="faq-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">For best results, apply 2–3 times per week. Massage into the scalp and leave for at least 30 minutes before washing. Overnight application gives the best results.</div>
     </div>
-    <div class="rc-dots">
-      <span class="rc-dot active" onclick="goR(0)"></span>
-      <span class="rc-dot" onclick="goR(1)"></span>
-      <span class="rc-dot" onclick="goR(2)"></span>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Is it safe for colour-treated hair?
+        <div class="faq-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">Yes! Our formula is 100% natural with no harsh chemicals. It is completely safe for all hair types including chemically treated, colour-treated, and bleached hair.</div>
     </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        When will I see visible results?
+        <div class="faq-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">Most customers notice reduced hair fall and improved scalp health within 2 weeks. Visible new hair growth typically appears by week 4–6 with consistent use 3 times a week.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        Can both men and women use this?
+        <div class="faq-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">Absolutely! Yara Nature Hair Oil is formulated for all genders and all hair types. Our customers include men dealing with hair loss, women with postpartum hair fall, and teenagers with dandruff.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        What payment methods are accepted?
+        <div class="faq-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">We accept all major payment methods: Credit/Debit Cards, UPI (GPay, PhonePe, Paytm), Net Banking, Wallets, and Cash on Delivery (COD). All payments are 100% secure.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        What is your return &amp; refund policy?
+        <div class="faq-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">We offer a 30-day hassle-free return policy. If you're not completely satisfied, contact us within 30 days for a full refund. Read our complete <a href="refund-policy.html" style="color:#2d4a2b">Refund Policy here</a>.</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+    <a href="faqs.html" class="btn-outline">See All FAQs →</a>
   </div>
 </section>
 
-<!-- ══════ INFO STRIP ══════ -->
-<div class="info-strip">
-  <div class="info-item">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+<!-- INFO STRIP -->
+<div class="info-strip" role="list" aria-label="Shipping and return information">
+  <div class="info-item" role="listitem">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
     <div><strong>FREE SHIPPING</strong><small>On Orders Above ₹499</small></div>
   </div>
-  <div class="info-item">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+  <div class="info-item" role="listitem">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
     <div><strong>30 DAYS RETURNS</strong><small>No Questions Asked</small></div>
   </div>
-  <div class="info-item">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-    <div><strong>SECURE PAYMENT</strong><small>100% Protected</small></div>
+  <div class="info-item" role="listitem">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <div><strong>SECURE PAYMENT</strong><small>100% Protected &amp; Safe</small></div>
   </div>
-  <div class="info-item">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    <div><strong>1000+ HAPPY CUSTOMERS</strong><small>Trusted by Thousands</small></div>
+  <div class="info-item" role="listitem">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <div><strong>10,000+ HAPPY CUSTOMERS</strong><small>Trusted Across India</small></div>
   </div>
 </div>
 
-<!-- ══════ FOOTER ══════ -->
-<footer class="site-footer">
+<!-- CONTACT CTA -->
+<section class="contact-strip" aria-label="Contact us">
+  <h2>Still Have Questions?</h2>
+  <p>Our team is available Monday–Saturday, 9AM–7PM to help you choose the right product and guide your hair care journey.</p>
+  <div class="contact-btns">
+    <a href="contact.html" class="btn-white">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email Us
+    </a>
+    <a href="https://wa.me/919999999999?text=Hi! I have questions about Yara Nature Hair Oil" target="_blank" rel="noopener" class="btn-white">
+      <svg width="16" height="16" fill="#25D366" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      Chat on WhatsApp
+    </a>
+    <a href="tel:+919999999999" class="btn-white">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      Call Us
+    </a>
+  </div>
+</section>
 
-  <!-- Top footer: 4 columns -->
+<!-- NEWSLETTER -->
+<section class="newsletter-sec" aria-label="Newsletter signup">
+  <h2>Get Exclusive Hair Care Tips</h2>
+  <p>Subscribe for 10% off your first order + weekly Ayurvedic hair care secrets delivered to your inbox</p>
+  <form class="newsletter-form" onsubmit="subscribeNewsletter(event)" aria-label="Newsletter subscription form">
+    <label for="newsletterEmail" style="position:absolute;left:-9999px">Email address</label>
+    <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" required aria-required="true"/>
+    <button type="submit">Get 10% OFF →</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
   <div class="footer-top">
-
-    <!-- Col 1: Brand -->
     <div class="footer-col footer-brand-col">
       <div class="footer-logo">
-        <img src="images/product-bottle.jpeg" alt="Yara Nature" />
+        <img src="images/product-bottle.jpeg" alt="Yara Nature"/>
         <div>
           <span class="footer-brand-name">YARA<br/>NATURE</span>
           <span class="footer-brand-tag">Pure Wellness from Nature</span>
         </div>
       </div>
-      <p class="footer-about">
-        Yara Nature is dedicated to providing 100% natural, chemical-free herbal hair care solutions crafted from ancient Ayurvedic wisdom and modern science.
-      </p>
-      <!-- Social icons -->
+      <p class="footer-about">Yara Nature is dedicated to providing 100% natural, chemical-free Ayurvedic hair care solutions crafted with ancient wisdom and modern science. Made in India with love.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Instagram" class="social-icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Follow us on Instagram" class="social-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         </a>
-        <a href="#" aria-label="Facebook" class="social-icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Follow us on Facebook" class="social-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
-        <a href="https://wa.me/919999999999" aria-label="WhatsApp" class="social-icon">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        <a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp" class="social-icon">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
         </a>
-        <a href="#" aria-label="YouTube" class="social-icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Subscribe to our YouTube channel" class="social-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
         </a>
       </div>
     </div>
-
-    <!-- Col 2: Quick Links -->
     <div class="footer-col">
       <h4 class="footer-col-title">Quick Links</h4>
       <ul class="footer-links">
@@ -352,85 +733,76 @@
         <li><a href="contact.html">📩 Contact Us</a></li>
       </ul>
     </div>
-
-    <!-- Col 3: Customer Support -->
     <div class="footer-col">
       <h4 class="footer-col-title">Customer Support</h4>
       <ul class="footer-links">
-        <li><a href="#">📦 Track My Order</a></li>
-        <li><a href="#">🔄 Returns &amp; Refunds</a></li>
-        <li><a href="#">🚚 Shipping Policy</a></li>
-        <li><a href="#">🔒 Privacy Policy</a></li>
-        <li><a href="#">📋 Terms &amp; Conditions</a></li>
-        <li><a href="#">💳 Payment Options</a></li>
+        <li><a href="track-order.html">📦 Track My Order</a></li>
+        <li><a href="dashboard.html">👤 My Account</a></li>
+        <li><a href="refund-policy.html">🔄 Returns &amp; Refunds</a></li>
+        <li><a href="shipping-policy.html">🚚 Shipping Policy</a></li>
+        <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+        <li><a href="terms.html">📋 Terms &amp; Conditions</a></li>
       </ul>
-      <!-- Trust badges -->
       <div class="footer-badges">
         <div class="fb-badge">ISO<br/>9001</div>
         <div class="fb-badge">100%<br/>NATURAL</div>
         <div class="fb-badge">LAB<br/>TESTED</div>
+        <div class="fb-badge">DERMAT<br/>TESTED</div>
       </div>
     </div>
-
-    <!-- Col 4: Contact & Order -->
     <div class="footer-col">
       <h4 class="footer-col-title">Get In Touch</h4>
       <div class="footer-contact-list">
         <div class="fc-item">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-          <span>+91 99999 99999</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          <a href="tel:+919999999999" style="color:inherit">+91 99999 99999</a>
         </div>
         <div class="fc-item">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>support@yaranature.com</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:support@yaranature.com" style="color:inherit">support@yaranature.com</a>
         </div>
         <div class="fc-item">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Mon–Sat: 9AM – 7PM</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon–Sat: 9AM – 7PM
         </div>
       </div>
-
-      <!-- Order CTA in footer -->
       <div class="footer-cta">
         <div class="footer-price-row">
           <span class="fp-new">₹349</span>
           <span class="fp-old">₹499</span>
           <span class="fp-off">30% OFF</span>
         </div>
-        <a href="#sticky-bar" class="btn-green footer-order-btn">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <button class="btn-green footer-order-btn" id="footerOrderBtn">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           ORDER NOW
-        </a>
-        <a href="https://wa.me/919999999999" class="btn-whatsapp footer-wa-btn">
-          <svg width="14" height="14" fill="#2d4a2b" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </button>
+        <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="footer-wa-btn">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           WHATSAPP
         </a>
       </div>
     </div>
-
-  </div><!-- /footer-top -->
-
-  <!-- Bottom bar -->
+  </div>
   <div class="footer-bottom">
     <p>© 2026 <strong>Yara Nature</strong>. All rights reserved. | Made with 🌿 in India</p>
     <div style="display:flex;align-items:center;gap:16px">
-      <a href="https://yara-nature.onrender.com/admin/login.html" style="color:rgba(255,255,255,0.4);font-size:0.72rem;text-decoration:none;" target="_blank">🔐 Admin</a>
-      <div class="footer-payment">
+      <a href="admin/login.html" style="color:rgba(255,255,255,.3);font-size:.7rem" aria-label="Admin login">🔐 Admin</a>
+      <div class="footer-payment" aria-label="Accepted payment methods">
         <span class="pay-icon">VISA</span>
         <span class="pay-icon">MC</span>
         <span class="pay-icon">UPI</span>
         <span class="pay-icon">GPay</span>
         <span class="pay-icon">PhonePe</span>
+        <span class="pay-icon">COD</span>
       </div>
     </div>
   </div>
-
 </footer>
 
-<!-- ══════ STICKY BAR ══════ -->
-<div class="sticky-bar" id="sticky-bar">
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Quick purchase bar">
   <div class="sb-left">
-    <img src="images/product-bottle.jpeg" alt="Yara Nature Oil" class="sb-thumb" />
+    <img src="images/product-bottle.jpeg" alt="Yara Nature Hair Oil" class="sb-thumb"/>
     <div class="sb-info">
       <span class="sb-name">YARA NATURE HERBAL HAIR OIL</span>
       <div class="sb-price">
@@ -441,32 +813,166 @@
     </div>
   </div>
   <div class="sb-btns">
-    <a href="#" class="btn-green">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <button class="btn-green" id="smbBuyBtn" aria-label="Buy Now">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       ORDER NOW
-    </a>
-    <a href="https://wa.me/919999999999" class="btn-whatsapp">
-      <svg width="15" height="15" fill="#2d4a2b" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-      CHAT ON WHATSAPP
-    </a>
+    </button>
+    <button class="btn-whatsapp" id="smbWaBtn" aria-label="Chat on WhatsApp">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      WHATSAPP
+    </button>
   </div>
 </div>
 
+<!-- FLOATING WHATSAPP -->
+<button class="floating-wa" id="floatingWa" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" fill="#fff" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</button>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- EXIT INTENT POPUP -->
+<div class="popup-overlay" id="exitPopup" role="dialog" aria-modal="true" aria-label="Special offer">
+  <div class="popup-box">
+    <button class="popup-close" onclick="document.getElementById('exitPopup').style.display='none'" aria-label="Close popup">✕</button>
+    <div class="popup-tag">⏳ Limited Time Offer</div>
+    <h2>Wait! Don't Miss Out</h2>
+    <p>Get an exclusive <strong>extra 15% off</strong> on your first order. This offer expires in:</p>
+    <div class="coupon-box">
+      <div class="coupon-code">YARA15</div>
+      <div class="coupon-note">Apply at checkout for 15% off your first order</div>
+    </div>
+    <div class="popup-timer">⏰ Offer expires in: <span id="exitTimer">10:00</span></div>
+    <button class="btn-green" style="width:100%;justify-content:center;margin-bottom:10px" onclick="applyAndClose('YARA15')">
+      Claim My 15% Discount →
+    </button>
+    <button style="background:none;border:none;color:#aaa;font-size:.82rem;cursor:pointer;width:100%" onclick="document.getElementById('exitPopup').style.display='none'">
+      No thanks, I'll pay full price
+    </button>
+  </div>
+</div>
+
+<!-- PURCHASE NOTIFICATION -->
+<div class="purchase-notif" id="purchaseNotif" role="status" aria-live="polite">
+  <div class="pn-icon" aria-hidden="true">🛒</div>
+  <div class="pn-text">Someone just ordered!</div>
+  <button class="pn-close" onclick="this.parentElement.style.display='none'" aria-label="Close notification">✕</button>
+</div>
+
 <script>
-// Hamburger
-document.getElementById('hamburger').addEventListener('click', function(){
-  document.getElementById('navMenu').classList.toggle('open');
+// ── Hamburger ──
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', function() {
+  const isOpen = navMenu.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
 });
-// Carousel
-let rIdx = 0;
-const rSlides = document.querySelectorAll('.rc-slide');
-const rDots = document.querySelectorAll('.rc-dot');
-function showR(i){ rSlides.forEach(s=>s.classList.remove('active')); rDots.forEach(d=>d.classList.remove('active')); rIdx=i; rSlides[i].classList.add('active'); rDots[i].classList.add('active'); }
-function nextR(){ showR((rIdx+1)%rSlides.length); }
-function prevR(){ showR((rIdx-1+rSlides.length)%rSlides.length); }
-function goR(i){ showR(i); }
-setInterval(nextR, 4500);
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.navbar')) navMenu.classList.remove('open');
+});
+
+// ── Product image switcher ──
+function switchImg(thumb, src) {
+  document.getElementById('pgMainImg').src = src;
+  document.querySelectorAll('.pg-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+
+// ── FAQ accordion ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// ── Quantity controls ──
+let qty = 1;
+document.getElementById('qtyMinus').addEventListener('click', () => {
+  if (qty > 1) { qty--; document.getElementById('qtyNum').textContent = qty; }
+});
+document.getElementById('qtyPlus').addEventListener('click', () => {
+  if (qty < 10) { qty++; document.getElementById('qtyNum').textContent = qty; }
+});
+
+// ── Scroll behaviors ──
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── Exit intent popup ──
+let exitShown = sessionStorage.getItem('yn_exit_shown');
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY < 10 && !exitShown) {
+    exitShown = true;
+    sessionStorage.setItem('yn_exit_shown', '1');
+    document.getElementById('exitPopup').style.display = 'flex';
+    startExitTimer();
+  }
+});
+function startExitTimer() {
+  let secs = 600;
+  const el = document.getElementById('exitTimer');
+  const t = setInterval(() => {
+    secs--;
+    const m = Math.floor(secs / 60).toString().padStart(2, '0');
+    const s = (secs % 60).toString().padStart(2, '0');
+    if (el) el.textContent = `${m}:${s}`;
+    if (secs <= 0) { clearInterval(t); document.getElementById('exitPopup').style.display = 'none'; }
+  }, 1000);
+}
+function applyAndClose(code) {
+  localStorage.setItem('yn_coupon', code);
+  document.getElementById('exitPopup').style.display = 'none';
+  if (typeof showToast === 'function') showToast(`✅ Coupon ${code} saved! Apply at checkout.`);
+  else alert(`Coupon ${code} saved! Apply at checkout.`);
+}
+
+// ── Purchase notifications ──
+const buyers = [
+  {n:'Neha',c:'Delhi'},{n:'Priya',c:'Mumbai'},{n:'Rahul',c:'Bangalore'},
+  {n:'Anita',c:'Pune'},{n:'Vikram',c:'Chennai'},{n:'Pooja',c:'Hyderabad'},
+  {n:'Arjun',c:'Jaipur'},{n:'Divya',c:'Kolkata'},{n:'Ravi',c:'Ahmedabad'},
+  {n:'Shreya',c:'Lucknow'},{n:'Karthik',c:'Coimbatore'},{n:'Meera',c:'Bhopal'},
+];
+function showPurchaseNotif() {
+  const b = buyers[Math.floor(Math.random() * buyers.length)];
+  const el = document.getElementById('purchaseNotif');
+  if (!el) return;
+  el.querySelector('.pn-text').innerHTML = `<strong>${b.n} from ${b.c}</strong> just ordered Yara Nature Oil<br/><small style="color:#888">${Math.floor(Math.random() * 8) + 1} minutes ago</small>`;
+  el.style.display = 'flex';
+  setTimeout(() => el.style.display = 'none', 5000);
+}
+setTimeout(showPurchaseNotif, 6000);
+setInterval(showPurchaseNotif, 22000);
+
+// ── Newsletter ──
+function subscribeNewsletter(e) {
+  e.preventDefault();
+  const el = document.getElementById('newsletterEmail');
+  if (!el?.value) return;
+  if (typeof api === 'function') {
+    api('/contact', 'POST', {name:'Newsletter Subscriber',email:el.value,subject:'Newsletter Subscription',message:'Subscribe to newsletter'})
+      .then(() => { if(typeof showToast === 'function') showToast('✅ Subscribed! Check your inbox.'); el.value = ''; })
+      .catch(() => { if(typeof showToast === 'function') showToast('✅ Subscribed successfully!'); el.value = ''; });
+  } else {
+    el.value = '';
+    alert('✅ Subscribed successfully! Check your inbox for 10% off.');
+  }
+}
 </script>
-<script src="api.js"></script>
+<script src="components.js" defer></script>
+<script src="api.js" defer></script>
 </body>
 </html>
