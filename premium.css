@@ -421,24 +421,8 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
   white-space:nowrap;
 }
 
-/* ══ FLOATING WHATSAPP ══ */
-.floating-wa{
-  position:fixed;bottom:80px;right:20px;
-  width:52px;height:52px;border-radius:50%;
-  background:#25D366;
-  display:flex;align-items:center;justify-content:center;
-  z-index:489;
-  box-shadow:0 4px 18px rgba(37,211,102,0.45);
-  transition:transform .2s;
-  text-decoration:none;
-}
-.floating-wa:hover{transform:scale(1.1)}
-.floating-wa-pulse{
-  position:absolute;inset:-4px;border-radius:50%;
-  border:2px solid rgba(37,211,102,0.4);
-  animation:waPulse 2s infinite;pointer-events:none;
-}
-@keyframes waPulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.55);opacity:0}}
+/* ══ FLOATING WHATSAPP — positioned above sticky bar ══ */
+/* Actual styles defined at bottom of this file via shared block */
 
 /* ══ POPUPS ══ */
 .popup-overlay{
@@ -470,11 +454,13 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
 
 /* ══ PURCHASE NOTIFICATION ══ */
 .purchase-notif{
-  position:fixed;bottom:86px;left:16px;
+  position:fixed;
+  bottom:calc(var(--sticky-h,72px) + 12px);
+  left:16px;
   background:#fff;border-radius:12px;
   padding:10px 14px;box-shadow:0 4px 20px rgba(0,0,0,0.14);
   display:flex;align-items:center;gap:10px;
-  z-index:488;font-size:0.78rem;
+  z-index:535;font-size:0.78rem;
   border-left:4px solid #2d4a2b;
   max-width:270px;
   animation:slideInLeft .4s ease;
@@ -489,18 +475,10 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
 .pn-text strong{display:block;color:#1a1a1a}
 .pn-text small{color:#aaa;font-size:0.68rem}
 
-/* ══ AUTH MODAL HELPERS (used by premium.js) ══ */
+/* ══ AUTH MODAL HELPERS ══ */
 #auth-modal,#search-modal,#cart-drawer,#cart-ov{font-family:'Inter',sans-serif}
 
-/* ══ SCROLL-TO-TOP ══ */
-#yn-scroll-top{
-  position:fixed;bottom:150px;right:20px;
-  width:40px;height:40px;border-radius:50%;
-  background:#2d4a2b;color:#fff;border:none;
-  font-size:1.1rem;cursor:pointer;z-index:487;
-  opacity:0;transition:opacity .3s;
-  box-shadow:0 3px 12px rgba(0,0,0,0.18);
-}
+/* ══ SCROLL-TO-TOP — use .scroll-top class from shared block ══ */
 
 /* ══ RESPONSIVE ══ */
 
@@ -553,8 +531,7 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
   .timeline-grid{grid-template-columns:repeat(2,1fr)}
   .stats-grid-p{grid-template-columns:repeat(2,1fr)}
   .sticky-mobile-bar{display:flex}
-  body{padding-bottom:80px}
-  .floating-wa{bottom:96px}
+  body{padding-bottom:var(--sticky-h,72px)}
   .pf-top{grid-template-columns:1fr 1fr;padding:32px 24px;gap:28px}
   .pf-bottom{padding:16px 24px}
   .purchase-notif{max-width:220px;font-size:0.74rem}
@@ -591,7 +568,7 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
   .pf-payments{justify-content:center}
   .smb-name{display:none}
   .smb-btns .smb-cart,.smb-btns .smb-buy{padding:8px 12px;font-size:0.74rem}
-  .floating-wa{bottom:84px;right:12px;width:46px;height:46px}
+  .floating-wa{width:46px;height:46px;right:12px}
   .popup-box{padding:26px 18px}
   .purchase-notif{display:none}
   .hiw-grid{flex-direction:column;align-items:stretch}
