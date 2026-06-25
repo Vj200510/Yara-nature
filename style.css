@@ -818,3 +818,45 @@ a { text-decoration: none; color: inherit; }
   .benefits-grid, .reviews-grid, .about-values { grid-template-columns: 1fr; }
   .page-content { padding: 40px 16px; }
 }
+
+/* ══ Shared floating elements for inner pages ══ */
+:root{--sticky-h:72px}
+@media(max-width:639px){:root{--sticky-h:76px}}
+
+.floating-wa{
+  position:fixed;
+  bottom:calc(var(--sticky-h) + 14px);
+  right:16px;z-index:540;
+  width:50px;height:50px;border-radius:50%;
+  background:#25D366;color:#fff;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(37,211,102,.42);
+  transition:transform .24s ease;
+}
+.floating-wa:hover{transform:scale(1.1)}
+
+.scroll-top{
+  position:fixed;
+  bottom:calc(var(--sticky-h) + 72px);
+  right:16px;z-index:530;
+  width:40px;height:40px;border-radius:50%;
+  background:#2d4a2b;color:#fff;border:none;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .24s ease;
+}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{transform:scale(1.1) translateY(-2px)}
+
+/* ══ Inner page sticky bar fix ══ */
+.sticky-bar{
+  min-height:var(--sticky-h);
+  padding-bottom:max(8px, env(safe-area-inset-bottom));
+}
+
+@media(max-width:639px){
+  body{padding-bottom:var(--sticky-h)}
+  .floating-wa{width:46px;height:46px;right:12px;bottom:calc(var(--sticky-h) + 12px)}
+  .scroll-top{right:12px;width:36px;height:36px;bottom:calc(var(--sticky-h) + 66px)}
+  .navbar{padding:8px 12px}
+  .nav-toggle{min-width:40px;min-height:40px}
+}
